@@ -2,13 +2,14 @@ import React, { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { SiReact, SiNodedotjs, SiExpress, SiMongodb, SiJavascript,SiGreensock, SiHtml5, SiCss3, SiTailwindcss, SiBootstrap, SiNextdotjs, SiEjs } from "react-icons/si";
+import { SiReact, SiNodedotjs, SiExpress, SiMongodb, SiJavascript, SiGreensock, SiHtml5, SiCss3, SiTailwindcss, SiBootstrap, SiNextdotjs, SiEjs, SiPython, SiC, SiCplusplus } from "react-icons/si";
+import { FaExternalLinkAlt, FaGithub } from "react-icons/fa"; 
 
 gsap.registerPlugin(ScrollTrigger);
 
 
 function Heading({heading}) {
-    return(<h2 className="flex items-center justify-items-start gap-4 mb-12 text-5xl md:text-6xl font-bold text-white relative w-full">
+    return(<h2 className="flex items-center justify-items-start px-3 gap-4 mb-12 text-5xl md:text-6xl font-bold text-white relative w-full">
   <span className="h-1 w-20 bg-white/10 rounded-full"></span>
   <span className=" text-nowrap">
     {heading}
@@ -38,8 +39,13 @@ const skills = [
   { name: "Tailwind", icon: <SiTailwindcss className="text-teal-400" /> },
   { name: "Bootstrap", icon: <SiBootstrap className="text-purple-600" /> },
   { name: "Next.js (Frontend)", icon: <SiNextdotjs className="text-white" /> },
-  { name: "EJS", icon: <SiEjs className="text-red-500" /> },
-];
+    { name: "EJS", icon: <SiEjs className="text-red-500" /> },
+   { name: "Python", icon: <SiPython color="#3776AB" /> },
+  { name: "C", icon: <SiC color="#A8B9CC" /> },
+  { name: "C++", icon: <SiCplusplus color="#00599C" /> },
+    ];
+    
+    const projects = [{ name: "HireSphere", image: "/hireSphere.png", description: "Great", tech: ["one", "two"], live: "lkdf", github: "ldksfj" },{ name: "HireSphere", image: "/hireSphere.png", description: "Great", tech: ["one", "two"], live: "lkdf", github: "ldksfj" },{ name: "HireSphere", image: "/hireSphere.png", description: "Great", tech: ["one", "two"], live: "lkdf", github: "ldksfj" }];
 
   useGSAP(() => {
     gsap.from(heroRef.current, {
@@ -62,13 +68,13 @@ const skills = [
 
     projectsRef.current.filter(Boolean).forEach((card) => {
     gsap.from(card, {
-      y: 50,
+      x: -10,
       opacity: 0,
-      duration: 1,
-      ease: "power3.out",
+        duration: 0.5,
+        delay: 0,
       scrollTrigger: {
         trigger: card,     // ✅ trigger = the card itself
-        start: "top 85%",  // when card enters viewport
+        start: "top 65%",  // when card enters viewport
         toggleActions: "play none none reverse", 
       },
     });
@@ -126,12 +132,13 @@ const skills = [
       {/* Hero */}
       <section
         ref={heroRef}
-        className="flex flex-col md:flex-row items-center justify-center h-screen px-8 gap-10 text-center md:text-left max-w-screen-xl mx-auto"
+        className="flex flex-col-reverse md:flex-row items-center justify-center h-screen px-8 pt-[200px] md:pt-0 gap-10 text-center md:text-left max-w-screen-xl mx-auto"
       >
         <div className="flex-1">
           <h1 className="text-6xl md:text-7xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">
-            Hi, I'm Myse
-          </h1>
+            Hi, I'm Kunal Sharma
+                  </h1>
+                  <h3 className="text-3xl mb-6 underline">MERN Stack Developer</h3>
           <p className="text-xl text-gray-400 mb-6 max-w-lg">
             I build futuristic websites with interactive animations and modern web technologies.
           </p>
@@ -145,7 +152,7 @@ const skills = [
         <div className="flex-1 flex justify-center md:justify-end">
           <div className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-blue-500 shadow-2xl">
             <img
-              src="https://i.pravatar.cc/400"
+              src="/Owner.jpg"
               alt="Myse"
               className="w-full h-full object-cover"
             />
@@ -154,10 +161,10 @@ const skills = [
       </section>
 
       {/* Tech Stack */}
-      <section className="py-24 px-8 flex flex-col items-center gap-12">
+      <section className="py-24 flex flex-col items-center gap-12">
 <Heading heading="Tech Stack"/>
               
-              <div className="flex justify-center items-center h-[500px] w-[500px] p-10  animate-spin-slow rounded-full">
+              <div className="flex justify-center items-center h-[500px] w-[500px] p-10  animate-spin-slow  rounded-full scale-75 md:scale-100">
                   <div className=" h-[80px] w-[80px] absolute bg-gradient-to-br from-blue-500 to-purple-60 rounded-full  ">
                   </div>
                   
@@ -180,12 +187,12 @@ const skills = [
   })}
 </div>
               
-             <div className=" containerSkills flex flex-col md:flex-row justify-center bg-white/5 rounded-lg  w-full p-12 gap-12 flex-wrap">
+             <div className=" containerSkills flex flex-col md:flex-row justify-center bg-white/5  w-full px-4 md:px-12 py-12 gap-12 flex-wrap">
           {skills.map((tech, idx) => (
             <div
               key={idx}
               ref={(el) => (skillsRef.current[idx] = el)}
-              className="py-4 px-16 bg-gray-800 rounded-xl shadow-md transform hover:scale-105 transition-transform duration-300 flex flex-col items-center gap-4"
+              className="py-4 px-8 md:px-20 bg-gray-800 rounded-xl shadow-md transform hover:scale-105 transition-transform duration-300 flex md:flex-col items-center gap-8 md:gap-4 w-full md:w-fit"
               >
                   <h1 className="text-5xl">{tech.icon}</h1>
               <h3 className="text-2xl font-semibold mb-1">{tech.name}</h3>
@@ -196,26 +203,76 @@ const skills = [
       </section>
 
       {/* Projects */}
-      <section className="py-24 px-8 flex flex-col items-center gap-12 max-w-screen-xl mx-auto ">
-        <h2 className="text-4xl font-bold mb-12 text-center">Projects</h2>
-        <div className="flex flex-wrap justify-center gap-8">
-          {["Project 1", "Project 2", "Project 3", "Project 4"].map((project, idx) => (
-            <div
-              key={project}
-              ref={(el) => (projectsRef.current[idx] = el)}
-              className="bg-gray-900 rounded-xl p-6 w-80 transform hover:-translate-y-1 transition-all duration-300 cursor-pointer shadow-md"
+      <section className="py-24 flex flex-col items-center gap-12 w-full bg-gradient-to-b from-gray-900 to-black  ">
+     <Heading heading="Projects"/>
+        <div className="flex flex-wrap justify-center gap-8 w-full">
+          {projects.map((project,index) => (
+              <div className="relative bg-[#111827] shadow-2xl overflow-hidden transform transition-all duration-500 hover:scale-125 hover:shadow-3xl w-full max-w-[1000px] flex flex-col md:flex-row gap-6 p-6 md:rounded-2xl"
+                  key={index}
+              ref={(el) => (projectsRef.current[index]=el)}>
+      
+      {/* Left Image/Visual */}
+      {project.image && (
+        <div className="h-[200px] w-[200px] flex-shrink-0 self-center">
+          <img
+            src={project.image}
+            alt={project.name}
+            className="w-full h-full rounded-full"
+          />
+        </div>
+      )}
+
+      {/* Right Content */}
+      <div className="flex-1 p-6 flex flex-col justify-between min-h-[200px]">
+        <div>
+          <h3 className="text-2xl font-bold text-white mb-2">{project.name}</h3>
+          <p className="text-gray-400 text-sm md:text-base mb-4">
+            {project.description}
+          </p>
+          {/* Tech stack badges */}
+          <div className="flex flex-wrap gap-2">
+            {project.tech?.map((tech, idx) => (
+              <span
+                key={idx}
+                className="bg-blue-600 text-white text-xs px-2 py-1 rounded-full"
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        {/* Links */}
+        <div className="flex gap-4 mt-4 self-end">
+          {project.live && (
+            <a
+              href={project.live}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1 text-blue-400 hover:text-blue-200 transition-colors"
             >
-              <h3 className="text-2xl font-bold mb-2">{project}</h3>
-              <p className="text-gray-400">
-                A futuristic web app built using modern tools and technologies.
-              </p>
-            </div>
+              Live <FaExternalLinkAlt />
+            </a>
+          )}
+          {project.github && (
+            <a
+              href={project.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1 text-gray-400 hover:text-white transition-colors"
+            >
+              Code <FaGithub />
+            </a>
+          )}
+        </div>
+      </div>
+    </div>
           ))}
         </div>
       </section>
 
       {/* Experience */}
-      <section className="py-24 px-8 flex flex-col items-center gap-12 bg-gradient-to-t from-gray-900 to-black max-w-screen-xl mx-auto">
+      <section className="py-24 px-8 flex flex-col items-center gap-12  max-w-screen-xl mx-auto">
         <h2 className="text-4xl font-bold mb-12 text-center">Experience</h2>
         <div className="flex flex-col md:flex-row md:justify-center gap-8 flex-wrap">
           {["Company A - Frontend", "Company B - Fullstack", "Freelance"].map((exp, idx) => (
