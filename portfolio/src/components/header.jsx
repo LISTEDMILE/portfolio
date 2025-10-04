@@ -22,7 +22,7 @@ export default function Header() {
 
   return (
     <header className="fixed top-0 w-full z-50 bg-black/40 backdrop-blur-md border-b border-cyan-500/30">
-          <div className="max-w-7xl mx-auto flex justify-between items-center px-6 py-1">
+          <div className="  flex justify-between items-center px-6 md:px-10 py-1">
               <div className="flex gap-4 items-center ">
         <img src="/Logo.png" className="h-15"/>
         <h1 className="logo text-2xl font-bold tracking-widest text-cyan-400 ">

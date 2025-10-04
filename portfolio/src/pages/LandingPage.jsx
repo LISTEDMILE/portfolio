@@ -35,18 +35,20 @@ export default function LandingPage() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-black via-gray-900 to-black text-white flex flex-col items-center justify-center overflow-hidden relative">
+    <div className="min-h-screen bg-gradient-to-b from-black via-gray-900 to-black text-white flex flex-col items-start md:items-center justify-center overflow-hidden relative gap-4 p-6">
       {/* Background animation */}
       <div className="absolute inset-0 -z-10 flex justify-center items-center">
         <div className="w-[600px] h-[600px] rounded-full bg-gradient-to-r from-cyan-500/20 to-purple-600/20 blur-3xl animate-pulse" />
-      </div>
+          </div>
+          
+          <img src="/Owner.jpg" className="h-[200px] w-[200px] md:h-[300px] md:w-[300px] self-center rounded-full border-cyan-500 border mb-8"/>
 
       {/* Hero section */}
-      <h1 className="hero-text text-6xl md:text-7xl font-bold tracking-widest bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent text-center">
+      <h1 className="hero-text text-4xl md:text-7xl font-bold tracking-widest bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent  md:text-center">
         Welcome to My Portfolio
       </h1>
-      <p className="sub-text mt-6 text-lg md:text-xl text-gray-300 max-w-2xl text-center">
-        I build futuristic, animated, and modern web experiences. Dive in and explore my work.
+      <p className="sub-text mt-6 text-lg md:text-xl text-gray-300 max-w-2xl md:text-center">
+        I build futuristic and modern web experiences. Dive in and explore my work.
       </p>
 
       {/* Call to action */}
@@ -54,7 +56,7 @@ export default function LandingPage() {
         Explore Projects
       </a>
 
-      {/* Floating futuristic elements */}
+      {/* Floating elements */}
       <div className="absolute top-20 left-10 w-20 h-20 rounded-full bg-cyan-500/30 blur-xl animate-bounce" />
       <div className="absolute bottom-32 right-16 w-24 h-24 rounded-full bg-purple-600/30 blur-xl animate-pulse" />
       <div className="absolute top-40 right-1/4 w-16 h-16  bg-blue-400/30 blur-lg animate-spin-slow" />
