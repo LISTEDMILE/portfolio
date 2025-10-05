@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Calendar, ChevronRight } from "lucide-react";
 import {
   SiReact,
   SiNodedotjs,
@@ -25,10 +26,10 @@ gsap.registerPlugin(ScrollTrigger);
 
 function Heading({ heading }) {
   return (
-    <h2 className="flex items-center justify-items-start px-3 gap-4 mb-12 text-5xl md:text-6xl font-bold text-white relative w-full">
-      <span className="h-1 w-20 bg-white/10 rounded-full"></span>
-      <span className=" text-nowrap">{heading}</span>
-      <span className="h-1 w-full bg-white/10 rounded-full"></span>
+    <h2 className="flex items-center justify-items-start px-3 gap-4 mb-12 text-4xl md:text-6xl font-bold text-white relative w-full">
+      <span className="h-1 w-10 md:w-20 bg-white/10 rounded-full"></span>
+      <span className=" wrap max-w-2/3 ">{heading}</span>
+      <span className="h-1 flex-1 bg-white/10 rounded-full"></span>
     </h2>
   );
 }
@@ -37,9 +38,9 @@ export default function FuturisticPortfolio() {
   const heroRef = useRef(null);
   const skillsRef = useRef([]);
   const projectsRef = useRef([]);
-  const experienceRef = useRef([]);
   const certificationsRef = useRef([]);
   const qualificationsRef = useRef([]);
+  const experienceRef = useRef([]);
 
   const skills = [
     { name: "React", icon: <SiReact className="text-blue-400" /> },
@@ -67,36 +68,89 @@ export default function FuturisticPortfolio() {
     {
       name: "HireSphere",
       image: "/hireSphere.png",
-      description: "Built a full-stack recruitment platform with job posting, candidate application, shortlisting, hiring, and talent-pool features; boosted processing speed and recruiter–applicant engagement. ",
-      tech: ["React", "NodeJs","ExpressJs","MongoDB","GSAP","Cloudinary",],
+      description:
+        "Built a full-stack recruitment platform with job posting, candidate application, shortlisting, hiring, and talent-pool features; boosted processing speed and recruiter–applicant engagement. ",
+      tech: ["React", "NodeJs", "ExpressJs", "MongoDB", "GSAP", "Cloudinary"],
       live: "https://hire-sphere-sy.vercel.app/",
       github: "https://github.com/LISTEDMILE/HireSphere.git",
     },
     {
       name: "OptiRoll",
       image: "/optiRoll.png",
-      description: "A smart attendance management web app built with MERN, GSAP, and DeepFace. It supports three user roles: Admin, Teacher, and Student. Admins can manage student profiles and view attendance data, teachers can easily toggle and mark attendance, and students can automatically record attendance using facial recognition. The app also allows students to view and update their dashboard in real-time, providing a seamless and interactive experience.",
-      tech: ["React", "NodeJs","ExpressJs","MongoDB","GSAP","Cloudinary","Deepface","Python","EmailAutomation"],
+      description:
+        "A smart attendance management web app built with MERN, GSAP, and DeepFace. It supports three user roles: Admin, Teacher, and Student. Admins can manage student profiles and view attendance data, teachers can easily toggle and mark attendance, and students can automatically record attendance using facial recognition. The app also allows students to view and update their dashboard in real-time, providing a seamless and interactive experience.",
+      tech: [
+        "React",
+        "NodeJs",
+        "ExpressJs",
+        "MongoDB",
+        "GSAP",
+        "Cloudinary",
+        "Deepface",
+        "Python",
+        "EmailAutomation",
+      ],
       live: "https://opti-roll.vercel.app/",
       github: "https://github.com/LISTEDMILE/OptiRoll.git",
     },
     {
       name: "B365Advisors",
       image: "/bAdvisors.png",
-      description: "Designed and deployed an animated, responsive business site using GSAP for smooth interactive transitions, enhancing brand presence and user engagement.",
+      description:
+        "Designed and deployed an animated, responsive business site using GSAP for smooth interactive transitions, enhancing brand presence and user engagement.",
       tech: ["nextJs", "GSAP"],
       live: "https://www.b365advisors.com/",
-      github: "#",
-      },
+  
+    },
     {
       name: "BaseChanger",
       image: "/baseChanger.png",
-      description: " Engineered an algorithm-driven tool for generating, converting, and calculating across multiple number bases (binary, decimal, hexadecimal, etc.) with high accuracy and efficiency.",
-      tech: ["HTML","CSS","JavaScript"],
+      description:
+        " Engineered an algorithm-driven tool for generating, converting, and calculating across multiple number bases (binary, decimal, hexadecimal, etc.) with high accuracy and efficiency.",
+      tech: ["HTML", "CSS", "JavaScript"],
       live: "https://basechange.netlify.app/",
       github: "https://github.com/LISTEDMILE/BASE-CHANGER.git",
     },
   ];
+
+  const experience = [
+            {
+              title: " Web Developer Intern",
+              company: "B365 Advisors",
+              startDate: " 1st March, 2025",
+              endDate: " 1 May, 2025",
+              bullets: [
+                " Built a responsive web app with advanced scroll-triggered animations using Next.js and GSAP.",
+                " Deployed on Vercel, achieving fast load times and strong performance scores.",
+                "Collaborated in a 5-member Agile team, contributing to core frontend features.",
+                " Designed pixel-perfect, responsive layouts with Tailwind CSS, ensuring cross-browser compatibility"," Worked with leadership on feature planning, bug fixes, and performance optimization."
+      ],
+      certificate: "bAdvisorsCer.jpg",
+              type:"Full-time • Remote"
+    },
+    {
+              title: " SIG, Web Dev Head ",
+              company: "CSI (IPEC)",
+              startDate: " Mar 2025",
+              endDate: "  Present",
+              bullets: [
+                "  Simplified web concepts for beginners through hands-on coding sessions",
+                " Taught modern JS frameworks, animation libraries, and responsive design",
+                "Collaborated in a 5-member Agile team, contributing to core frontend features.",
+                "  Led live project builds covering planning, coding, and deployment.","  Mentored peers in Git, GitHub, and industry-standard workflows."
+              ],
+    },
+     {
+              title: "  Software Developer ",
+              company: "PMKVY",
+              startDate: "  390 Hours",
+              bullets: [
+                "  Developed interactive web applications with modern frameworks. ",
+                " Ensured code quality and compliance by following prescribed programming and internal language policies."
+       ],
+              certificate:"PMKVY.jpg"
+            },
+          ]
 
   useGSAP(() => {
     gsap.from(heroRef.current, {
@@ -124,34 +178,60 @@ export default function FuturisticPortfolio() {
         duration: 0.5,
         delay: 0,
         scrollTrigger: {
-          trigger: card, // ✅ trigger = the card itself
-          start: "top 65%", // when card enters viewport
+          trigger: card,
+          start: "top 65%", 
           toggleActions: "play none none reverse",
         },
       });
+
+      card.addEventListener("mouseenter", () => {
+        gsap.to(card, {
+          scale: 1.05,
+          duration: 0,
+          rotate: 1.5,
+          boxShadow: "0px 12px 30px rgba(99, 102, 241, 0.3)", 
+        });
+      });
+      card.addEventListener("mouseleave", () => {
+        gsap.to(card, {
+          scale: 1,
+          duration: 0,
+          rotate: 0,
+          boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.15)", 
+        });
+      });
     });
 
-    gsap.from(experienceRef.current.filter(Boolean), {
-      y: 30,
-      opacity: 0,
-      duration: 1,
-      stagger: 0.3,
-      scrollTrigger: {
-        trigger: experienceRef.current[0],
-        start: "top 80%",
-      },
+    
+
+    certificationsRef.current.filter(Boolean).forEach((card) => {
+      gsap.from(card, {
+        opacity: 0,
+        duration: 0.5,
+        delay: 0,
+        scrollTrigger: {
+          trigger: card,
+          start: "top 65%", 
+          toggleActions: "play none none reverse",
+        },
+      });
+
+      card.addEventListener("mouseenter", () => {
+        gsap.to(card, {
+          scale: 1.05,
+          duration: 0,
+          boxShadow: "0px 12px 30px rgba(99, 102, 241, 0.3)", 
+        });
+      });
+      card.addEventListener("mouseleave", () => {
+        gsap.to(card, {
+          scale: 1,
+          duration: 0,
+          boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.15)", 
+        });
+      });
     });
 
-    gsap.from(certificationsRef.current.filter(Boolean), {
-      y: 50,
-      opacity: 0,
-      duration: 1,
-      stagger: 0.2,
-      scrollTrigger: {
-        trigger: certificationsRef.current[0],
-        start: "top 85%",
-      },
-    });
 
     gsap.from(qualificationsRef.current.filter(Boolean), {
       y: 50,
@@ -163,6 +243,60 @@ export default function FuturisticPortfolio() {
         start: "top 85%",
       },
     });
+
+    experienceRef.current.forEach((card) => {
+      gsap.from(card, {
+        opacity: 0,
+        y: 40,
+        scale: 0.95,
+        duration: 0.5,
+        scrollTrigger: {
+          trigger: card, 
+          start: "top 65%", 
+          toggleActions: "play none none reverse",
+        },
+      });
+
+    const bullets = card.querySelectorAll(".bullet"); 
+
+gsap.from(bullets, {
+      opacity: 0,
+      x: -20,
+      stagger: 0.15,
+      delay: 0.3,
+      duration: 0.6,
+      ease: "power3.out",
+       scrollTrigger: {
+          trigger: card, 
+          start: "top 65%", 
+          toggleActions: "play none none reverse",
+        },
+    });
+
+      card.addEventListener("mouseenter", () => {
+        gsap.to(card, {
+          scale: 1.05,
+          duration: 0,
+          boxShadow: "0px 12px 30px rgba(99, 102, 241, 0.3)",
+          borderColor: "rgba(99, 102, 241, 1)",
+          border: 2,
+        });
+      });
+      card.addEventListener("mouseleave", () => {
+        gsap.to(card, {
+          scale: 1,
+          duration: 0,
+
+          border: 0,
+          boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.15)",
+        });
+      });
+    });
+
+
+  
+
+    
   });
 
   return (
@@ -248,7 +382,7 @@ export default function FuturisticPortfolio() {
         <div className="flex flex-wrap justify-center gap-8 w-full">
           {projects.map((project, index) => (
             <div
-              className="relative bg-[#111827] shadow-2xl overflow-hidden transform transition-all duration-500 hover:scale-125 hover:shadow-3xl w-full max-w-[1000px] flex flex-col md:flex-row gap-6 p-6 md:rounded-2xl"
+              className="relative bg-[#111827] shadow-2xl duration-500  w-full max-w-[1000px] flex flex-col md:flex-row gap-6 p-6 md:rounded-2xl"
               key={index}
               ref={(el) => (projectsRef.current[index] = el)}
             >
@@ -315,38 +449,99 @@ export default function FuturisticPortfolio() {
       </section>
 
       {/* Experience */}
-      <section className="py-24 px-8 flex flex-col items-center gap-12  max-w-screen-xl mx-auto">
-        <h2 className="text-4xl font-bold mb-12 text-center">Experience</h2>
-        <div className="flex flex-col md:flex-row md:justify-center gap-8 flex-wrap">
-          {["Company A - Frontend", "Company B - Fullstack", "Freelance"].map(
-            (exp, idx) => (
-              <div
-                key={exp}
-                ref={(el) => (experienceRef.current[idx] = el)}
-                className="p-6 bg-gray-800 rounded-xl shadow-md transform hover:scale-105 transition-transform duration-300 flex-1 text-center"
-              >
-                <h3 className="text-2xl font-semibold mb-1">{exp}</h3>
-                <p className="text-gray-400">
-                  Built interactive futuristic web apps using React & GSAP.
-                </p>
+      <section className="py-24  flex flex-col items-center gap-12  w-full mx-auto">
+        <Heading heading="Experience"/>
+        <div className="flex flex-col px-8 md:flex-row md:justify-center gap-8 flex-wrap w-full">
+          {experience.map(({ title, company, startDate, endDate, bullets, certificate,type }, idx) => (
+            <article
+              key={idx}
+              ref={(el) => (experienceRef.current[idx] = el)}
+              className=" w-full max-w-[1000px] p-4 md:p-6 bg-gradient-to-br from-white/90 to-sky-50/80 dark:from-slate-800 dark:to-slate-900/60 rounded-2xl shadow-2xl ring-1 ring-slate-200 dark:ring-slate-700 overflow-hidden hover:scale-[1.02] transition-transform"
+            >
+              <div className="relative">
+                {/* decorative circle */}
+                <div className="absolute -top-6 -right-6 w-28 h-28 rounded-full bg-gradient-to-tr from-pink-300 to-indigo-300 opacity-40 blur-2xl transform rotate-12 pointer-events-none" />
+
+                <header className="flex flex-col">
+                  <div>
+                    <h3 className="text-lg md:text-xl font-semibold text-slate-100">
+                      {title}
+                    </h3>
+                    <p className="text-sm text-slate-400">
+                      {company}
+                    </p>
+                  </div>
+
+                  <div className="flex items-center gap-2 text-xs text-slate-300 self-end">
+                    <span className="whitespace-nowrap">
+                      <strong className="font-medium">{startDate}</strong>
+                      <span className="mx-1">—</span>
+                      <span className="opacity-90">{endDate}</span>
+                    </span>
+                  </div>
+                </header>
+
+                <ul className="mt-4 space-y-2 text-sm md:text-base text-slate-700 dark:text-slate-300">
+                  {bullets.map((b, i) => (
+                    <li key={i} className="flex items-start gap-3 bullet">
+                      <span className="mt-1 flex-none w-2 h-2 rounded-full bg-gradient-to-tr from-indigo-500 to-pink-500 shadow-sm" />
+                      <p className="leading-snug">{b}</p>
+                    </li>
+                  ))}
+                </ul>
+
+                {type &&
+                  <p className=" text-slate-400 mt-4">
+                    <span className="text-xs ">
+                      {type}                    </span>
+                  </p>
+                }
+                {certificate &&
+                  <div className="mt-5 flex items-center justify-end">
+                    <a
+                      aria-label="See more"
+                      className="inline-flex items-center gap-2 text-sm font-medium rounded-lg px-3 py-1.5 bg-white/60 dark:bg-slate-800/60 backdrop-blur-sm ring-1 ring-slate-100 dark:ring-slate-700 hover:scale-105 transition-transform"
+                      href={`/${certificate}`}
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+
+                      Certificate
+                   
+                    </a>
+                  </div>}
               </div>
-            )
-          )}
+            </article>
+          ))}
         </div>
       </section>
 
       {/* Certifications */}
-      <section className="py-24 px-8 flex flex-col items-center gap-12 max-w-screen-xl mx-auto">
-        <h2 className="text-4xl font-bold mb-12 text-center">Certifications</h2>
-        <div className="flex flex-wrap justify-center gap-6">
-          {["React Expert", "Fullstack Developer", "GSAP Animation Pro"].map(
+      <section className="py-24  flex flex-col items-center gap-12 w-full mx-auto">
+        <Heading heading="Certifications & Awards"/>
+        <div className="flex px-8 md:p-0 flex-wrap justify-center gap-6 w-full max-w-[1150px]">
+            {[{ name: " 3rd place, Silver Jubilee Poster Presentation (IPEC) – 2023.jpg",certificate:"poster23.jpg" },{ name: " 3rd place, Silver Jubilee Poster Presentation (IPEC) – 2024.jpg",certificate:"poster24.jpg" },{ name: "  IoT for Cyber Physical Systems – IHUB Divya Sampark, IIT Roorkee",certificate:"IOT.jpg" },{ name: "Introduction to Cybersecurity – Cisco Networking Academy.",certificate:"cyber.pdf" },{ name: "Sig WebDev - CSI Society of India.",certificate:"CSI.jpg" },{ name: " Software Programmer - PMKVY. ",certificate:"PMKVY.jpg" },{ name: " MongoDB",certificate:"MongoDB.pdf" },].map(
             (cert, idx) => (
               <div
-                key={cert}
+                key={idx}
                 ref={(el) => (certificationsRef.current[idx] = el)}
-                className="p-6 bg-gray-900 rounded-xl text-center transform hover:scale-105 transition-transform duration-300 shadow-md"
+                className="p-6 bg-gray-900 rounded-xl text-center transform hover:scale-105 transition-transform duration-300 shadow-md flex flex-col w-full md:w-fit"
               >
-                <p className="text-lg font-semibold">{cert}</p>
+                  <p className="text-lg font-semibold">{cert.name}</p>
+                  {cert.certificate &&
+                  <div className="mt-5 flex items-center justify-end">
+                    <a
+                      aria-label="See more"
+                      className="inline-flex items-center gap-2 text-sm font-medium rounded-lg px-3 py-1.5 bg-white/60 dark:bg-slate-800/60 backdrop-blur-sm ring-1 ring-slate-100 dark:ring-slate-700 hover:scale-105 transition-transform"
+                      href={`/${cert.certificate}`}
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+
+                      Certificate
+                   
+                    </a>
+                  </div>}
               </div>
             )
           )}
