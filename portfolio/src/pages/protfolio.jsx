@@ -430,7 +430,7 @@ export default function FuturisticPortfolio() {
             web technologies.
           </p>
           <a
-            href="#contact"
+            href="/connect"
             className="inline-block px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full font-semibold transform hover:scale-105 transition-transform duration-300"
           >
             Contact Me
