@@ -27,7 +27,6 @@ import { FaExternalLinkAlt, FaGithub
   ,FaLinkedin,
   FaGlobe,
   FaFileAlt } from "react-icons/fa";
-import Footer from "../components/Footer";
 
 gsap.registerPlugin(ScrollTrigger);
 

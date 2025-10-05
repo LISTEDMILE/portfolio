@@ -4,6 +4,7 @@ import Header from "./components/header";
 import Footer from "./components/Footer";
 import LandingPage from "./pages/LandingPage";
 import PortfolioPage from "./pages/protfolio";
+import ConnectPage from "./pages/connectMe";
 
 
 
@@ -26,7 +27,8 @@ function App() {
       children: [{
       path:"/",element:<LandingPage/>
       },
-      {path:"/portfolio",element:<PortfolioPage/>}
+        { path: "/portfolio", element: <PortfolioPage /> },
+      {path:"/connect",element:<ConnectPage/>}
       ]
   }
 ])
