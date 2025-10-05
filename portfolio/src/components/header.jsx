@@ -38,30 +38,17 @@ export default function Header() {
           >
             Home
           </a>
+         
+          
           <a
-            href="/about"
+            href="/connect"
             className="nav-link text-gray-300 hover:text-cyan-400 transition-colors duration-300"
           >
-            About
-          </a>
-          <a
-            href="/projects"
-            className="nav-link text-gray-300 hover:text-cyan-400 transition-colors duration-300"
-          >
-            Projects
-          </a>
-          <a
-            href="/contact"
-            className="nav-link text-gray-300 hover:text-cyan-400 transition-colors duration-300"
-          >
-            Contact
+            Connect
           </a>
         </nav>
 
-        {/* Mobile menu icon (optional) */}
-        <button className="md:hidden text-cyan-400 hover:text-purple-500 transition">
-          ☰
-        </button>
+       
       </div>
     </header>
   );
