@@ -2,7 +2,6 @@ import React from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
-
 export default function LandingPage() {
   useGSAP(() => {
     gsap.from(".hero-text", {
@@ -39,20 +38,27 @@ export default function LandingPage() {
       {/* Background animation */}
       <div className="absolute inset-0 -z-10 flex justify-center items-center">
         <div className="w-[600px] h-[600px] rounded-full bg-gradient-to-r from-cyan-500/20 to-purple-600/20 blur-3xl animate-pulse" />
-          </div>
-          
-          <img src="/Owner.jpg" className="h-[200px] w-[200px] md:h-[300px] md:w-[300px] self-center rounded-full border-cyan-500 border mb-8"/>
+      </div>
+
+      <img
+        src="/Owner.jpg"
+        className="h-[200px] w-[200px] md:h-[300px] md:w-[300px] self-center rounded-full border-cyan-500 border mb-8"
+      />
 
       {/* Hero section */}
       <h1 className="hero-text text-4xl md:text-7xl font-bold tracking-widest bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent  md:text-center">
         Welcome to My Portfolio
       </h1>
       <p className="sub-text mt-6 text-lg md:text-xl text-gray-300 max-w-2xl md:text-center">
-        I build futuristic and modern web experiences. Dive in and explore my work.
+        I build futuristic and modern web experiences. Dive in and explore my
+        work.
       </p>
 
       {/* Call to action */}
-      <a href="/portfolio" className="cta-btn neon-glow mt-10 px-8 py-3 text-lg rounded-2xl bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold shadow-lg hover:scale-105 transition-transform">
+      <a
+        href="/portfolio"
+        className="cta-btn neon-glow mt-10 px-8 py-3 text-lg rounded-2xl bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold shadow-lg hover:scale-105 transition-transform"
+      >
         Explore Projects
       </a>
 
@@ -63,4 +69,3 @@ export default function LandingPage() {
     </div>
   );
 }
-

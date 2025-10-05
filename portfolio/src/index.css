@@ -1,6 +1,5 @@
 @import "tailwindcss";
 
-
 /* Custom animations */
 @keyframes spin-slow {
   from {
@@ -14,5 +13,3 @@
 .animate-spin-slow {
   animation: spin-slow 8s linear infinite;
 }
-
-

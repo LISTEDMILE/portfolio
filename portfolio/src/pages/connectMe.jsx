@@ -1,28 +1,33 @@
-import React, { useRef} from "react";
+import React, { useRef } from "react";
 import gsap from "gsap";
-import { FaGithub, FaLinkedin, FaInstagram, FaDiscord, FaPhoneAlt } from "react-icons/fa";
+import {
+  FaGithub,
+  FaLinkedin,
+  FaInstagram,
+  FaDiscord,
+  FaPhoneAlt,
+} from "react-icons/fa";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 export default function ConnectPage() {
   const cardsRef = useRef([]);
 
-    gsap.registerPlugin(ScrollTrigger);
+  gsap.registerPlugin(ScrollTrigger);
   useGSAP(() => {
-      // Animate cards on mount
-      cardsRef.current.forEach(element => {
-         gsap.from(element, {
-      y: 50,
-      opacity: 0,
-      duration: 1,
-             scrollTrigger: {
-                 trigger: element,
-                 start: "top 65%",
+    // Animate cards on mount
+    cardsRef.current.forEach((element) => {
+      gsap.from(element, {
+        y: 50,
+        opacity: 0,
+        duration: 1,
+        scrollTrigger: {
+          trigger: element,
+          start: "top 65%",
           toggleActions: "play none none reverse",
-     }
-    });
+        },
       });
-   
+    });
   }, []);
 
   const links = [
@@ -35,7 +40,7 @@ export default function ConnectPage() {
     {
       platform: "LinkedIn",
       icon: <FaLinkedin className="text-5xl text-blue-400" />,
-      link: "https://linkedin.com/in/your-linkedin",
+      link: "https://www.linkedin.com/in/kunal-sharma-5a3a27295?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
       glow: "from-blue-600 to-cyan-500",
     },
     {
@@ -92,7 +97,9 @@ export default function ConnectPage() {
             <span className="relative z-10">{item.icon}</span>
 
             {/* Platform Name */}
-            <p className="relative z-10 text-xl font-semibold tracking-wide">{item.platform}</p>
+            <p className="relative z-10 text-xl font-semibold tracking-wide">
+              {item.platform}
+            </p>
           </a>
         ))}
       </div>

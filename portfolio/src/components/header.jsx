@@ -22,13 +22,13 @@ export default function Header() {
 
   return (
     <header className="fixed top-0 w-full z-50 bg-black/40 backdrop-blur-md border-b border-cyan-500/30">
-          <div className="  flex justify-between items-center px-6 md:px-10 py-1">
-              <div className="flex gap-4 items-center ">
-        <img src="/Logo.png" className="h-15"/>
-        <h1 className="logo text-2xl font-bold tracking-widest text-cyan-400 ">
-          MY<span className="text-purple-500">DEV</span>
-                  </h1>
-                  </div>
+      <div className="  flex justify-between items-center px-6 md:px-10 py-1">
+        <div className="flex gap-4 items-center ">
+          <img src="/Logo.png" className="h-15" />
+          <h1 className="logo text-2xl font-bold tracking-widest text-cyan-400 ">
+            MY<span className="text-purple-500">DEV</span>
+          </h1>
+        </div>
 
         {/* Navigation */}
         <nav className="hidden md:flex gap-8">
@@ -38,8 +38,13 @@ export default function Header() {
           >
             Home
           </a>
-         
-          
+          <a
+            href="/portfolio"
+            className="nav-link text-gray-300 hover:text-cyan-400 transition-colors duration-300"
+          >
+            Portfolio
+          </a>
+
           <a
             href="/connect"
             className="nav-link text-gray-300 hover:text-cyan-400 transition-colors duration-300"
@@ -47,8 +52,6 @@ export default function Header() {
             Connect
           </a>
         </nav>
-
-       
       </div>
     </header>
   );

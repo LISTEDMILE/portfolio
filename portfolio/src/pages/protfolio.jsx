@@ -20,13 +20,14 @@ import {
   SiCplusplus,
   SiGit,
   SiGithub,
-
- 
 } from "react-icons/si";
-import { FaExternalLinkAlt, FaGithub
-  ,FaLinkedin,
+import {
+  FaExternalLinkAlt,
+  FaGithub,
+  FaLinkedin,
   FaGlobe,
-  FaFileAlt } from "react-icons/fa";
+  FaFileAlt,
+} from "react-icons/fa";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -47,6 +48,7 @@ export default function FuturisticPortfolio() {
   const certificationsRef = useRef([]);
   const qualificationsRef = useRef([]);
   const experienceRef = useRef([]);
+  const profileRefs = useRef([]);
 
   const skills = [
     { name: "React", icon: <SiReact className="text-blue-400" /> },
@@ -183,6 +185,45 @@ export default function FuturisticPortfolio() {
     { name: " MongoDB", certificate: "MongoDB.pdf" },
   ];
 
+  const profiles = [
+    {
+      platform: "GitHub",
+      icon: <FaGithub />,
+      link: "https://github.com/LISTEDMILE",
+    },
+    {
+      platform: "LinkedIn",
+      icon: <FaLinkedin className="text-blue-500" />,
+      link: "https://www.linkedin.com/in/kunal-sharma-5a3a27295?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    },
+    {
+      platform: "Portfolio",
+      icon: <FaGlobe />,
+      link: "https://portfolio-five-wheat-37.vercel.app/",
+    },
+    { platform: "Resume", icon: <FaFileAlt />, link: "/resume.pdf" },
+  ];
+
+  const qualifications = [
+    {
+      course: "B.Tech",
+      trade: "Computer Science and Engineering",
+      organisation: "Inderprastha Engineering College",
+      year: "2023-2027",
+    },
+    {
+      course: "Class 12th CBSE",
+      trade: "PCM",
+      organisation: "Indraprastha Public School",
+      year: "2021-2022",
+    },
+    {
+      course: "Class 10th CBSE",
+      organisation: "Indraprastha Public School",
+      year: "2019-2020",
+    },
+  ];
+
   useGSAP(() => {
     gsap.from(heroRef.current, {
       y: 100,
@@ -264,6 +305,35 @@ export default function FuturisticPortfolio() {
     qualificationsRef.current.filter(Boolean).forEach((card) => {
       gsap.from(card, {
         opacity: 0,
+        duration: 0.5,
+        delay: 0,
+        scrollTrigger: {
+          trigger: card,
+          start: "top 65%",
+          toggleActions: "play none none reverse",
+        },
+      });
+
+      card.addEventListener("mouseenter", () => {
+        gsap.to(card, {
+          scale: 1.05,
+          duration: 0,
+          boxShadow: "0px 12px 30px rgba(99, 102, 241, 0.3)",
+        });
+      });
+      card.addEventListener("mouseleave", () => {
+        gsap.to(card, {
+          scale: 1,
+          duration: 0,
+          boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.15)",
+        });
+      });
+    });
+
+    profileRefs.current.filter(Boolean).forEach((card) => {
+      gsap.from(card, {
+        opacity: 0,
+        y: 10,
         duration: 0.5,
         delay: 0,
         scrollTrigger: {
@@ -569,25 +639,7 @@ export default function FuturisticPortfolio() {
       <section className="py-24 flex flex-col items-center gap-12 bg-gradient-to-b from-cyan-900 to-black  w-full">
         <Heading heading="Qualifications" />
         <div className="flex px-12 flex-col md:flex-row md:justify-center gap-8 flex-wrap">
-          {[
-            {
-              course: "B.Tech",
-              trade: "Computer Science and Engineering",
-              organisation: "Inderprastha Engineering College",
-              year: "2023-2027",
-            },
-            {
-              course: "Class 12th CBSE",
-              trade: "PCM",
-              organisation: "Indraprastha Public School",
-              year: "2021-2022",
-            },
-            {
-              course: "Class 10th CBSE",
-              organisation: "Indraprastha Public School",
-              year: "2019-2020",
-            },
-          ].map((qual, idx) => (
+          {qualifications.map((qual, idx) => (
             <div
               key={idx}
               ref={(el) => (qualificationsRef.current[idx] = el)}
@@ -667,16 +719,16 @@ export default function FuturisticPortfolio() {
         </div>
       </section>
 
-      {/* Certifications */}
+      {/* Profiles */}
       <section className="py-24 p-8 flex flex-col items-center bg-black/70 gap-12 w-full">
         <Heading heading="Profiles" />
         <div className="flex  flex-wrap justify-around gap-10 w-full max-w-[1000px]   ">
-          {[{ platform: "GitHub", icon: <FaGithub />,link:"https://github.com/LISTEDMILE"},{ platform: "LinkedIn", icon: <FaLinkedin className="text-blue-500" />, link:"https://www.linkedin.com/in/kunal-sharma-5a3a27295?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"},{ platform: "Portfolio", icon: <FaGlobe />,link:"https://portfolio-five-wheat-37.vercel.app/"},{ platform: "Resume", icon: <FaFileAlt />,link:"/resume.pdf"}].map((cert, idx) => (
+          {profiles.map((cert, idx) => (
             <a
               href={cert.link}
-                    target="_blank"
+              target="_blank"
               key={idx}
-              ref={(el) => (certificationsRef.current[idx] = el)}
+              ref={(el) => (profileRefs.current[idx] = el)}
               className="relative p-4 rounded-2xl items-center flex flex-col flex-1  w-full md:w-fit
              shadow-lg hover:shadow-indigo-500/30 transition-all duration-500
              border border-white/10 hover:border-indigo-400/50
@@ -685,21 +737,14 @@ export default function FuturisticPortfolio() {
               {/* Glow border effect */}
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-red-900 to-black opacity-20 blur-xl group-hover:opacity-40 transition duration-500"></div>
 
-              
-         
-                  
-                    <span className="text-6xl">{cert.icon}</span>
-               <p className=" text-lg font-semibold text-white tracking-wide">
+              <span className="text-6xl">{cert.icon}</span>
+              <p className=" text-lg font-semibold text-white tracking-wide">
                 {cert.platform}
               </p>
-
-              
             </a>
           ))}
         </div>
       </section>
-
-      
     </div>
   );
 }
