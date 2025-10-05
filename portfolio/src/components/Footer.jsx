@@ -40,7 +40,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-gray-900 text-gray-300 border-t border-gray-700">
+    <footer className="bg-gray-900 text-gray-300 border-t border-gray-700 pb-12">
       <div className="max-w-7xl mx-auto py-12 px-6 md:px-12 flex flex-col md:flex-row justify-between items-center gap-6">
         {/* Left: Logo / Name */}
         <div className="flex flex-col items-center md:items-start gap-2">

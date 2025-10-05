@@ -43,12 +43,6 @@ function Heading({ heading }) {
 
 export default function FuturisticPortfolio() {
   const heroRef = useRef(null);
-  const skillsRef = useRef([]);
-  const projectsRef = useRef([]);
-  const certificationsRef = useRef([]);
-  const qualificationsRef = useRef([]);
-  const experienceRef = useRef([]);
-  const profileRefs = useRef([]);
 
   const skills = [
     { name: "React", icon: <SiReact className="text-blue-400" /> },
@@ -232,7 +226,7 @@ export default function FuturisticPortfolio() {
       ease: "power4.out",
     });
 
-    gsap.from(skillsRef.current.filter(Boolean), {
+    gsap.from(".skillsRef", {
       opacity: 0,
       duration: 1,
       stagger: 0.1,
@@ -243,7 +237,7 @@ export default function FuturisticPortfolio() {
       },
     });
 
-    projectsRef.current.filter(Boolean).forEach((card) => {
+    gsap.utils.toArray(".projectsRef").forEach((card) => {
       gsap.from(card, {
         x: -10,
         opacity: 0,
@@ -274,7 +268,7 @@ export default function FuturisticPortfolio() {
       });
     });
 
-    certificationsRef.current.filter(Boolean).forEach((card) => {
+    gsap.utils.toArray(".certificationRef").forEach((card) => {
       gsap.from(card, {
         opacity: 0,
         duration: 0.5,
@@ -302,7 +296,7 @@ export default function FuturisticPortfolio() {
       });
     });
 
-    qualificationsRef.current.filter(Boolean).forEach((card) => {
+    gsap.utils.toArray(".qualificationRef").forEach((card) => {
       gsap.from(card, {
         opacity: 0,
         duration: 0.5,
@@ -330,7 +324,7 @@ export default function FuturisticPortfolio() {
       });
     });
 
-    profileRefs.current.filter(Boolean).forEach((card) => {
+    gsap.utils.toArray(".profileRef").forEach((card) => {
       gsap.from(card, {
         opacity: 0,
         y: 10,
@@ -359,7 +353,7 @@ export default function FuturisticPortfolio() {
       });
     });
 
-    experienceRef.current.forEach((card) => {
+    gsap.utils.toArray(".experienceRef").forEach((card) => {
       gsap.from(card, {
         opacity: 0,
         y: 40,
@@ -476,8 +470,7 @@ export default function FuturisticPortfolio() {
           {skills.map((tech, idx) => (
             <div
               key={idx}
-              ref={(el) => (skillsRef.current[idx] = el)}
-              className="py-4 px-8 md:px-20 bg-gray-800 rounded-xl shadow-md transform hover:scale-105 transition-transform duration-300 flex md:flex-col items-center gap-8 md:gap-4 w-full md:w-fit"
+              className="skillsRef py-4 px-8 md:px-20 bg-gray-800 rounded-xl shadow-md transform hover:scale-105 transition-transform duration-300 flex md:flex-col items-center gap-8 md:gap-4 w-full md:w-fit"
             >
               <h1 className="text-5xl">{tech.icon}</h1>
               <h3 className="text-2xl font-semibold mb-1">{tech.name}</h3>
@@ -492,9 +485,8 @@ export default function FuturisticPortfolio() {
         <div className="flex flex-wrap justify-center gap-8 w-full">
           {projects.map((project, index) => (
             <div
-              className="relative bg-[#111827] shadow-2xl duration-500  w-full max-w-[1000px] flex flex-col md:flex-row gap-6 p-6 md:rounded-2xl"
+              className="projectsRef relative bg-[#111827] shadow-2xl duration-500  w-full max-w-[1000px] flex flex-col md:flex-row gap-6 p-6 md:rounded-2xl"
               key={index}
-              ref={(el) => (projectsRef.current[index] = el)}
             >
               {/* Left Image/Visual */}
               {project.image && (
@@ -577,8 +569,7 @@ export default function FuturisticPortfolio() {
             ) => (
               <article
                 key={idx}
-                ref={(el) => (experienceRef.current[idx] = el)}
-                className=" w-full max-w-[1000px] p-4 md:p-6 bg-gradient-to-br from-white/90 to-sky-50/80 dark:from-slate-800 dark:to-slate-900/60 rounded-2xl shadow-2xl ring-1 ring-slate-200 dark:ring-slate-700 overflow-hidden hover:scale-[1.02] transition-transform"
+                className="experienceRef w-full max-w-[1000px] p-4 md:p-6 bg-gradient-to-br from-white/90 to-sky-50/80 dark:from-slate-800 dark:to-slate-900/60 rounded-2xl shadow-2xl ring-1 ring-slate-200 dark:ring-slate-700 overflow-hidden hover:scale-[1.02] transition-transform"
               >
                 <div className="relative">
                   {/* decorative circle */}
@@ -642,8 +633,7 @@ export default function FuturisticPortfolio() {
           {qualifications.map((qual, idx) => (
             <div
               key={idx}
-              ref={(el) => (qualificationsRef.current[idx] = el)}
-              className="relative p-6 rounded-xl shadow-md transform hover:scale-105 transition-all duration-500 
+              className="qualificationRef relative p-6 rounded-xl shadow-md transform hover:scale-105 transition-all duration-500 
                bg-gradient-to-br from-gray-900 to-black
                text-center border border-gray-700 hover:border-indigo-400 group"
             >
@@ -683,8 +673,7 @@ export default function FuturisticPortfolio() {
           {certifications.map((cert, idx) => (
             <div
               key={idx}
-              ref={(el) => (certificationsRef.current[idx] = el)}
-              className="relative p-6 rounded-2xl text-center flex flex-col w-full md:w-fit
+              className="certificationRef relative p-6 rounded-2xl text-center flex flex-col w-full md:w-fit
              bg-gradient-to-br from-gray-900 via-gray-800 to-black
              shadow-lg hover:shadow-indigo-500/30 transition-all duration-500
              border border-transparent hover:border-indigo-400/50
@@ -728,8 +717,7 @@ export default function FuturisticPortfolio() {
               href={cert.link}
               target="_blank"
               key={idx}
-              ref={(el) => (profileRefs.current[idx] = el)}
-              className="relative p-4 rounded-2xl items-center flex flex-col flex-1  w-full md:w-fit
+              className="profileRef relative p-4 rounded-2xl items-center flex flex-col flex-1  w-full md:w-fit
              shadow-lg hover:shadow-indigo-500/30 transition-all duration-500
              border border-white/10 hover:border-indigo-400/50
              transform hover:scale-105 group gap-4"
