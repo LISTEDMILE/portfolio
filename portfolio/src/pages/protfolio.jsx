@@ -2,7 +2,6 @@ import React, { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Calendar, ChevronRight } from "lucide-react";
 import {
   SiReact,
   SiNodedotjs,
@@ -19,8 +18,16 @@ import {
   SiPython,
   SiC,
   SiCplusplus,
+  SiGit,
+  SiGithub,
+
+ 
 } from "react-icons/si";
-import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
+import { FaExternalLinkAlt, FaGithub
+  ,FaLinkedin,
+  FaGlobe,
+  FaFileAlt } from "react-icons/fa";
+import Footer from "../components/Footer";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -62,6 +69,8 @@ export default function FuturisticPortfolio() {
     { name: "Python", icon: <SiPython color="#3776AB" /> },
     { name: "C", icon: <SiC color="#A8B9CC" /> },
     { name: "C++", icon: <SiCplusplus color="#00599C" /> },
+    { name: "Git", icon: <SiGit className="text-orange-500" /> },
+    { name: "GitHub", icon: <SiGithub className=" text-white" /> },
   ];
 
   const projects = [
@@ -100,7 +109,6 @@ export default function FuturisticPortfolio() {
         "Designed and deployed an animated, responsive business site using GSAP for smooth interactive transitions, enhancing brand presence and user engagement.",
       tech: ["nextJs", "GSAP"],
       live: "https://www.b365advisors.com/",
-  
     },
     {
       name: "BaseChanger",
@@ -114,43 +122,67 @@ export default function FuturisticPortfolio() {
   ];
 
   const experience = [
-            {
-              title: " Web Developer Intern",
-              company: "B365 Advisors",
-              startDate: " 1st March, 2025",
-              endDate: " 1 May, 2025",
-              bullets: [
-                " Built a responsive web app with advanced scroll-triggered animations using Next.js and GSAP.",
-                " Deployed on Vercel, achieving fast load times and strong performance scores.",
-                "Collaborated in a 5-member Agile team, contributing to core frontend features.",
-                " Designed pixel-perfect, responsive layouts with Tailwind CSS, ensuring cross-browser compatibility"," Worked with leadership on feature planning, bug fixes, and performance optimization."
+    {
+      title: " Web Developer Intern",
+      company: "B365 Advisors",
+      startDate: " 1st March, 2025",
+      endDate: " 1 May, 2025",
+      bullets: [
+        " Built a responsive web app with advanced scroll-triggered animations using Next.js and GSAP.",
+        " Deployed on Vercel, achieving fast load times and strong performance scores.",
+        "Collaborated in a 5-member Agile team, contributing to core frontend features.",
+        " Designed pixel-perfect, responsive layouts with Tailwind CSS, ensuring cross-browser compatibility",
+        " Worked with leadership on feature planning, bug fixes, and performance optimization.",
       ],
       certificate: "bAdvisorsCer.jpg",
-              type:"Full-time • Remote"
+      type: "Full-time • Remote",
     },
     {
-              title: " SIG, Web Dev Head ",
-              company: "CSI (IPEC)",
-              startDate: " Mar 2025",
-              endDate: "  Present",
-              bullets: [
-                "  Simplified web concepts for beginners through hands-on coding sessions",
-                " Taught modern JS frameworks, animation libraries, and responsive design",
-                "Collaborated in a 5-member Agile team, contributing to core frontend features.",
-                "  Led live project builds covering planning, coding, and deployment.","  Mentored peers in Git, GitHub, and industry-standard workflows."
-              ],
+      title: " SIG, Web Dev Head ",
+      company: "CSI (IPEC)",
+      startDate: " Mar 2025",
+      endDate: "  Present",
+      bullets: [
+        "  Simplified web concepts for beginners through hands-on coding sessions",
+        " Taught modern JS frameworks, animation libraries, and responsive design",
+        "Collaborated in a 5-member Agile team, contributing to core frontend features.",
+        "  Led live project builds covering planning, coding, and deployment.",
+        "  Mentored peers in Git, GitHub, and industry-standard workflows.",
+      ],
     },
-     {
-              title: "  Software Developer ",
-              company: "PMKVY",
-              startDate: "  390 Hours",
-              bullets: [
-                "  Developed interactive web applications with modern frameworks. ",
-                " Ensured code quality and compliance by following prescribed programming and internal language policies."
-       ],
-              certificate:"PMKVY.jpg"
-            },
-          ]
+    {
+      title: "  Software Developer ",
+      company: "PMKVY",
+      startDate: "  390 Hours",
+      bullets: [
+        "  Developed interactive web applications with modern frameworks. ",
+        " Ensured code quality and compliance by following prescribed programming and internal language policies.",
+      ],
+      certificate: "PMKVY.jpg",
+    },
+  ];
+
+  const certifications = [
+    {
+      name: " 3rd place, Silver Jubilee Poster Presentation (IPEC) – 2023.jpg",
+      certificate: "poster23.jpg",
+    },
+    {
+      name: " 3rd place, Silver Jubilee Poster Presentation (IPEC) – 2024.jpg",
+      certificate: "poster24.jpg",
+    },
+    {
+      name: "  IoT for Cyber Physical Systems – IHUB Divya Sampark, IIT Roorkee",
+      certificate: "IOT.jpg",
+    },
+    {
+      name: "Introduction to Cybersecurity – Cisco Networking Academy.",
+      certificate: "cyber.pdf",
+    },
+    { name: "Sig WebDev - CSI Society of India.", certificate: "CSI.jpg" },
+    { name: " Software Programmer - PMKVY. ", certificate: "PMKVY.jpg" },
+    { name: " MongoDB", certificate: "MongoDB.pdf" },
+  ];
 
   useGSAP(() => {
     gsap.from(heroRef.current, {
@@ -179,7 +211,7 @@ export default function FuturisticPortfolio() {
         delay: 0,
         scrollTrigger: {
           trigger: card,
-          start: "top 65%", 
+          start: "top 65%",
           toggleActions: "play none none reverse",
         },
       });
@@ -189,7 +221,7 @@ export default function FuturisticPortfolio() {
           scale: 1.05,
           duration: 0,
           rotate: 1.5,
-          boxShadow: "0px 12px 30px rgba(99, 102, 241, 0.3)", 
+          boxShadow: "0px 12px 30px rgba(99, 102, 241, 0.3)",
         });
       });
       card.addEventListener("mouseleave", () => {
@@ -197,12 +229,10 @@ export default function FuturisticPortfolio() {
           scale: 1,
           duration: 0,
           rotate: 0,
-          boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.15)", 
+          boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.15)",
         });
       });
     });
-
-    
 
     certificationsRef.current.filter(Boolean).forEach((card) => {
       gsap.from(card, {
@@ -211,7 +241,7 @@ export default function FuturisticPortfolio() {
         delay: 0,
         scrollTrigger: {
           trigger: card,
-          start: "top 65%", 
+          start: "top 65%",
           toggleActions: "play none none reverse",
         },
       });
@@ -220,28 +250,44 @@ export default function FuturisticPortfolio() {
         gsap.to(card, {
           scale: 1.05,
           duration: 0,
-          boxShadow: "0px 12px 30px rgba(99, 102, 241, 0.3)", 
+          boxShadow: "0px 12px 30px rgba(99, 102, 241, 0.3)",
         });
       });
       card.addEventListener("mouseleave", () => {
         gsap.to(card, {
           scale: 1,
           duration: 0,
-          boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.15)", 
+          boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.15)",
         });
       });
     });
 
+    qualificationsRef.current.filter(Boolean).forEach((card) => {
+      gsap.from(card, {
+        opacity: 0,
+        duration: 0.5,
+        delay: 0,
+        scrollTrigger: {
+          trigger: card,
+          start: "top 65%",
+          toggleActions: "play none none reverse",
+        },
+      });
 
-    gsap.from(qualificationsRef.current.filter(Boolean), {
-      y: 50,
-      opacity: 0,
-      duration: 1,
-      stagger: 0.2,
-      scrollTrigger: {
-        trigger: qualificationsRef.current[0],
-        start: "top 85%",
-      },
+      card.addEventListener("mouseenter", () => {
+        gsap.to(card, {
+          scale: 1.05,
+          duration: 0,
+          boxShadow: "0px 12px 30px rgba(99, 102, 241, 0.3)",
+        });
+      });
+      card.addEventListener("mouseleave", () => {
+        gsap.to(card, {
+          scale: 1,
+          duration: 0,
+          boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.15)",
+        });
+      });
     });
 
     experienceRef.current.forEach((card) => {
@@ -251,27 +297,27 @@ export default function FuturisticPortfolio() {
         scale: 0.95,
         duration: 0.5,
         scrollTrigger: {
-          trigger: card, 
-          start: "top 65%", 
+          trigger: card,
+          start: "top 65%",
           toggleActions: "play none none reverse",
         },
       });
 
-    const bullets = card.querySelectorAll(".bullet"); 
+      const bullets = card.querySelectorAll(".bullet");
 
-gsap.from(bullets, {
-      opacity: 0,
-      x: -20,
-      stagger: 0.15,
-      delay: 0.3,
-      duration: 0.6,
-      ease: "power3.out",
-       scrollTrigger: {
-          trigger: card, 
-          start: "top 65%", 
+      gsap.from(bullets, {
+        opacity: 0,
+        x: -20,
+        stagger: 0.15,
+        delay: 0.3,
+        duration: 0.6,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: card,
+          start: "top 65%",
           toggleActions: "play none none reverse",
         },
-    });
+      });
 
       card.addEventListener("mouseenter", () => {
         gsap.to(card, {
@@ -292,11 +338,6 @@ gsap.from(bullets, {
         });
       });
     });
-
-
-  
-
-    
   });
 
   return (
@@ -450,140 +491,216 @@ gsap.from(bullets, {
 
       {/* Experience */}
       <section className="py-24  flex flex-col items-center gap-12  w-full mx-auto">
-        <Heading heading="Experience"/>
+        <Heading heading="Experience" />
         <div className="flex flex-col px-8 md:flex-row md:justify-center gap-8 flex-wrap w-full">
-          {experience.map(({ title, company, startDate, endDate, bullets, certificate,type }, idx) => (
-            <article
-              key={idx}
-              ref={(el) => (experienceRef.current[idx] = el)}
-              className=" w-full max-w-[1000px] p-4 md:p-6 bg-gradient-to-br from-white/90 to-sky-50/80 dark:from-slate-800 dark:to-slate-900/60 rounded-2xl shadow-2xl ring-1 ring-slate-200 dark:ring-slate-700 overflow-hidden hover:scale-[1.02] transition-transform"
-            >
-              <div className="relative">
-                {/* decorative circle */}
-                <div className="absolute -top-6 -right-6 w-28 h-28 rounded-full bg-gradient-to-tr from-pink-300 to-indigo-300 opacity-40 blur-2xl transform rotate-12 pointer-events-none" />
-
-                <header className="flex flex-col">
-                  <div>
-                    <h3 className="text-lg md:text-xl font-semibold text-slate-100">
-                      {title}
-                    </h3>
-                    <p className="text-sm text-slate-400">
-                      {company}
-                    </p>
-                  </div>
-
-                  <div className="flex items-center gap-2 text-xs text-slate-300 self-end">
-                    <span className="whitespace-nowrap">
-                      <strong className="font-medium">{startDate}</strong>
-                      <span className="mx-1">—</span>
-                      <span className="opacity-90">{endDate}</span>
-                    </span>
-                  </div>
-                </header>
-
-                <ul className="mt-4 space-y-2 text-sm md:text-base text-slate-700 dark:text-slate-300">
-                  {bullets.map((b, i) => (
-                    <li key={i} className="flex items-start gap-3 bullet">
-                      <span className="mt-1 flex-none w-2 h-2 rounded-full bg-gradient-to-tr from-indigo-500 to-pink-500 shadow-sm" />
-                      <p className="leading-snug">{b}</p>
-                    </li>
-                  ))}
-                </ul>
-
-                {type &&
-                  <p className=" text-slate-400 mt-4">
-                    <span className="text-xs ">
-                      {type}                    </span>
-                  </p>
-                }
-                {certificate &&
-                  <div className="mt-5 flex items-center justify-end">
-                    <a
-                      aria-label="See more"
-                      className="inline-flex items-center gap-2 text-sm font-medium rounded-lg px-3 py-1.5 bg-white/60 dark:bg-slate-800/60 backdrop-blur-sm ring-1 ring-slate-100 dark:ring-slate-700 hover:scale-105 transition-transform"
-                      href={`/${certificate}`}
-                      rel="noopener noreferrer"
-                      target="_blank"
-                    >
-
-                      Certificate
-                   
-                    </a>
-                  </div>}
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      {/* Certifications */}
-      <section className="py-24  flex flex-col items-center gap-12 w-full mx-auto">
-        <Heading heading="Certifications & Awards"/>
-        <div className="flex px-8 md:p-0 flex-wrap justify-center gap-6 w-full max-w-[1150px]">
-            {[{ name: " 3rd place, Silver Jubilee Poster Presentation (IPEC) – 2023.jpg",certificate:"poster23.jpg" },{ name: " 3rd place, Silver Jubilee Poster Presentation (IPEC) – 2024.jpg",certificate:"poster24.jpg" },{ name: "  IoT for Cyber Physical Systems – IHUB Divya Sampark, IIT Roorkee",certificate:"IOT.jpg" },{ name: "Introduction to Cybersecurity – Cisco Networking Academy.",certificate:"cyber.pdf" },{ name: "Sig WebDev - CSI Society of India.",certificate:"CSI.jpg" },{ name: " Software Programmer - PMKVY. ",certificate:"PMKVY.jpg" },{ name: " MongoDB",certificate:"MongoDB.pdf" },].map(
-            (cert, idx) => (
-              <div
+          {experience.map(
+            (
+              {
+                title,
+                company,
+                startDate,
+                endDate,
+                bullets,
+                certificate,
+                type,
+              },
+              idx
+            ) => (
+              <article
                 key={idx}
-                ref={(el) => (certificationsRef.current[idx] = el)}
-                className="p-6 bg-gray-900 rounded-xl text-center transform hover:scale-105 transition-transform duration-300 shadow-md flex flex-col w-full md:w-fit"
+                ref={(el) => (experienceRef.current[idx] = el)}
+                className=" w-full max-w-[1000px] p-4 md:p-6 bg-gradient-to-br from-white/90 to-sky-50/80 dark:from-slate-800 dark:to-slate-900/60 rounded-2xl shadow-2xl ring-1 ring-slate-200 dark:ring-slate-700 overflow-hidden hover:scale-[1.02] transition-transform"
               >
-                  <p className="text-lg font-semibold">{cert.name}</p>
-                  {cert.certificate &&
-                  <div className="mt-5 flex items-center justify-end">
-                    <a
-                      aria-label="See more"
-                      className="inline-flex items-center gap-2 text-sm font-medium rounded-lg px-3 py-1.5 bg-white/60 dark:bg-slate-800/60 backdrop-blur-sm ring-1 ring-slate-100 dark:ring-slate-700 hover:scale-105 transition-transform"
-                      href={`/${cert.certificate}`}
-                      rel="noopener noreferrer"
-                      target="_blank"
-                    >
+                <div className="relative">
+                  {/* decorative circle */}
+                  <div className="absolute -top-6 -right-6 w-28 h-28 rounded-full bg-gradient-to-tr from-pink-300 to-indigo-300 opacity-40 blur-2xl transform rotate-12 pointer-events-none" />
 
-                      Certificate
-                   
-                    </a>
-                  </div>}
-              </div>
+                  <header className="flex flex-col">
+                    <div>
+                      <h3 className="text-lg md:text-xl font-semibold text-slate-100">
+                        {title}
+                      </h3>
+                      <p className="text-sm text-slate-400">{company}</p>
+                    </div>
+
+                    <div className="flex items-center gap-2 text-xs text-slate-300 self-end">
+                      <span className="whitespace-nowrap">
+                        <strong className="font-medium">{startDate}</strong>
+                        <span className="mx-1">—</span>
+                        <span className="opacity-90">{endDate}</span>
+                      </span>
+                    </div>
+                  </header>
+
+                  <ul className="mt-4 space-y-2 text-sm md:text-base text-slate-700 dark:text-slate-300">
+                    {bullets.map((b, i) => (
+                      <li key={i} className="flex items-start gap-3 bullet">
+                        <span className="mt-1 flex-none w-2 h-2 rounded-full bg-gradient-to-tr from-indigo-500 to-pink-500 shadow-sm" />
+                        <p className="leading-snug">{b}</p>
+                      </li>
+                    ))}
+                  </ul>
+
+                  {type && (
+                    <p className=" text-slate-400 mt-4">
+                      <span className="text-xs ">{type} </span>
+                    </p>
+                  )}
+                  {certificate && (
+                    <div className="mt-5 flex items-center justify-end">
+                      <a
+                        aria-label="See more"
+                        className="inline-flex items-center gap-2 text-sm font-medium rounded-lg px-3 py-1.5 bg-white/60 dark:bg-slate-800/60 backdrop-blur-sm ring-1 ring-slate-100 dark:ring-slate-700 hover:scale-105 transition-transform"
+                        href={`/${certificate}`}
+                        rel="noopener noreferrer"
+                        target="_blank"
+                      >
+                        Certificate
+                      </a>
+                    </div>
+                  )}
+                </div>
+              </article>
             )
           )}
         </div>
       </section>
 
       {/* Qualifications */}
-      <section className="py-24 px-8 flex flex-col items-center gap-12 bg-gradient-to-t from-gray-900 to-black max-w-screen-xl mx-auto">
-        <h2 className="text-4xl font-bold mb-12 text-center">Qualifications</h2>
-        <div className="flex flex-col md:flex-row md:justify-center gap-8 flex-wrap">
+      <section className="py-24 flex flex-col items-center gap-12 bg-gradient-to-b from-cyan-900 to-black  w-full">
+        <Heading heading="Qualifications" />
+        <div className="flex px-12 flex-col md:flex-row md:justify-center gap-8 flex-wrap">
           {[
-            "B.Sc Computer Science",
-            "Diploma in Web Design",
-            "Various Workshops",
+            {
+              course: "B.Tech",
+              trade: "Computer Science and Engineering",
+              organisation: "Inderprastha Engineering College",
+              year: "2023-2027",
+            },
+            {
+              course: "Class 12th CBSE",
+              trade: "PCM",
+              organisation: "Indraprastha Public School",
+              year: "2021-2022",
+            },
+            {
+              course: "Class 10th CBSE",
+              organisation: "Indraprastha Public School",
+              year: "2019-2020",
+            },
           ].map((qual, idx) => (
             <div
-              key={qual}
+              key={idx}
               ref={(el) => (qualificationsRef.current[idx] = el)}
-              className="p-6 bg-gray-800 rounded-xl shadow-md transform hover:scale-105 transition-transform duration-300 flex-1 text-center"
+              className="relative p-6 rounded-xl shadow-md transform hover:scale-105 transition-all duration-500 
+               bg-gradient-to-br from-gray-900 to-black
+               text-center border border-gray-700 hover:border-indigo-400 group"
             >
-              <p className="text-lg font-semibold">{qual}</p>
+              {/* Glow background */}
+              <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-indigo-900 to-gray-900 opacity-20 blur-xl group-hover:opacity-40 transition duration-500"></div>
+
+              {/* Qualification Content */}
+              <div className="relative flex gap-8 justify-around flex-wrap">
+                <div className="flex flex-col gap-4">
+                  <p className="text-xl font-semibold text-white">
+                    {qual.course}
+                  </p>
+                  {qual.trade && (
+                    <p className="text-sm text-gray-300 mt-1 italic">
+                      {qual.trade}
+                    </p>
+                  )}
+                </div>
+                <div className="flex flex-col gap-4">
+                  <p className="text-sm text-gray-400 mt-2">
+                    {qual.organisation}
+                  </p>
+                  <p className="text-sm text-indigo-400 mt-1 font-medium">
+                    {qual.year}
+                  </p>
+                </div>
+              </div>
             </div>
           ))}
         </div>
       </section>
 
-      {/* Contact */}
-      <section
-        id="contact"
-        className="py-24 px-8 text-center flex flex-col items-center gap-6 max-w-screen-xl mx-auto"
-      >
-        <h2 className="text-4xl font-bold mb-4">Contact Me</h2>
-        <p className="text-gray-400 mb-4">
-          Let's build the future together. Reach out!
-        </p>
-        <a
-          href="mailto:yourmail@example.com"
-          className="inline-block px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full font-semibold transform hover:scale-105 transition-transform duration-300"
-        >
-          Email Me
-        </a>
+      {/* Certifications */}
+      <section className="py-24  flex flex-col items-center gap-12 w-full mx-auto">
+        <Heading heading="Certifications & Awards" />
+        <div className="flex px-8 md:p-0 flex-wrap justify-center gap-6 w-full max-w-[1200px]">
+          {certifications.map((cert, idx) => (
+            <div
+              key={idx}
+              ref={(el) => (certificationsRef.current[idx] = el)}
+              className="relative p-6 rounded-2xl text-center flex flex-col w-full md:w-fit
+             bg-gradient-to-br from-gray-900 via-gray-800 to-black
+             shadow-lg hover:shadow-indigo-500/30 transition-all duration-500
+             border border-transparent hover:border-indigo-400/50
+             transform hover:scale-105 group"
+            >
+              {/* Glow border effect */}
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-red-900 to-black opacity-20 blur-xl group-hover:opacity-40 transition duration-500"></div>
+
+              <p className="relative text-lg font-semibold text-white tracking-wide">
+                {cert.name}
+              </p>
+
+              {cert.certificate && (
+                <div className="mt-6 flex items-center justify-center">
+                  <a
+                    aria-label="See certificate"
+                    href={`/${cert.certificate}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="relative inline-flex items-center gap-2 px-4 py-2 text-sm font-medium
+                   rounded-lg bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500
+                   text-white shadow-md hover:shadow-pink-500/50
+                   transition-all duration-300 ease-out
+                   hover:scale-110 active:scale-95"
+                  >
+                    Certificate
+                  </a>
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
       </section>
+
+      {/* Certifications */}
+      <section className="py-24 p-8 flex flex-col items-center bg-black/70 gap-12 w-full">
+        <Heading heading="Profiles" />
+        <div className="flex  flex-wrap justify-around gap-10 w-full max-w-[1000px]   ">
+          {[{ platform: "GitHub", icon: <FaGithub />,link:"https://github.com/LISTEDMILE"},{ platform: "LinkedIn", icon: <FaLinkedin className="text-blue-500" />, link:"https://www.linkedin.com/in/kunal-sharma-5a3a27295?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"},{ platform: "Portfolio", icon: <FaGlobe />,link:"https://portfolio-five-wheat-37.vercel.app/"},{ platform: "Resume", icon: <FaFileAlt />,link:"/resume.pdf"}].map((cert, idx) => (
+            <a
+              href={cert.link}
+                    target="_blank"
+              key={idx}
+              ref={(el) => (certificationsRef.current[idx] = el)}
+              className="relative p-4 rounded-2xl items-center flex flex-col flex-1  w-full md:w-fit
+             shadow-lg hover:shadow-indigo-500/30 transition-all duration-500
+             border border-white/10 hover:border-indigo-400/50
+             transform hover:scale-105 group gap-4"
+            >
+              {/* Glow border effect */}
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-red-900 to-black opacity-20 blur-xl group-hover:opacity-40 transition duration-500"></div>
+
+              
+         
+                  
+                    <span className="text-6xl">{cert.icon}</span>
+               <p className=" text-lg font-semibold text-white tracking-wide">
+                {cert.platform}
+              </p>
+
+              
+            </a>
+          ))}
+        </div>
+      </section>
+
+      
     </div>
   );
 }
