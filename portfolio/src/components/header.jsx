@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { useGSAP } from "@gsap/react";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { IoClose } from "react-icons/io5";
 import gsap from "gsap";
 
 export default function Header() {
+
+  const [showNav, setShowNav] = useState(false);
   useGSAP(() => {
     gsap.from(".logo", {
       x: -50,
@@ -30,8 +34,35 @@ export default function Header() {
           </h1>
         </div>
 
+         <div className={`${showNav?"flex":"hidden"} flex-col min-h-screen w-[300px] fixed top-0 right-0 bg-gradient-to-b from-cyan-950 to-black text-3xl gap-20 p-8`}>
+            <div className="inset-0 h-screen w-screen fixed bg-black/60 " onClick={() => setShowNav(false)}></div>
+          <IoClose className="text-white text-5xl self-end cursor-pointer "  onClick={()=>setShowNav(false)}/>
+          <div className="flex flex-col gap-6">
+          <a
+            href="/"
+            className="nav-link text-gray-300 hover:text-cyan-400 transition-colors duration-300"
+          >
+            Home
+          </a>
+          <a
+            href="/portfolio"
+            className="nav-link text-gray-300 hover:text-cyan-400 transition-colors duration-300"
+          >
+            Portfolio
+          </a>
+
+          <a
+            href="/connect"
+            className="nav-link text-gray-300 hover:text-cyan-400 transition-colors duration-300"
+          >
+            Connect
+            </a>
+          </div>
+        </div>
+        
         {/* Navigation */}
         <nav className="hidden md:flex gap-8">
+         
           <a
             href="/"
             className="nav-link text-gray-300 hover:text-cyan-400 transition-colors duration-300"
@@ -52,6 +83,8 @@ export default function Header() {
             Connect
           </a>
         </nav>
+
+         <GiHamburgerMenu className="text-white text-2xl cursor-pointer md:hidden"  onClick={()=> setShowNav(true)}/>
       </div>
     </header>
   );
