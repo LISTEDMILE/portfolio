@@ -189,12 +189,12 @@ export default function FuturisticPortfolio() {
     {
       platform: "LinkedIn",
       icon: <FaLinkedin className="text-blue-500" />,
-      link: linkedIn
+      link: linkedIn,
     },
     {
       platform: "Portfolio",
       icon: <FaGlobe />,
-      link: portfolio
+      link: portfolio,
     },
     { platform: "Resume", icon: <FaFileAlt />, link: resume },
   ];
@@ -235,7 +235,6 @@ export default function FuturisticPortfolio() {
         trigger: ".containerSkills",
         start: "top 40%",
         toggleActions: "play none none reverse",
-        markers: true
       },
     });
 
@@ -249,7 +248,6 @@ export default function FuturisticPortfolio() {
           trigger: card,
           start: "top 65%",
           toggleActions: "play none none reverse",
-           markers: true
         },
       });
 
@@ -280,7 +278,6 @@ export default function FuturisticPortfolio() {
           trigger: card,
           start: "top 65%",
           toggleActions: "play none none reverse",
-           markers: true
         },
       });
 
@@ -309,7 +306,6 @@ export default function FuturisticPortfolio() {
           trigger: card,
           start: "top 65%",
           toggleActions: "play none none reverse",
-           markers: true
         },
       });
 
@@ -339,7 +335,6 @@ export default function FuturisticPortfolio() {
           trigger: card,
           start: "top 65%",
           toggleActions: "play none none reverse",
-           markers: true
         },
       });
 
@@ -369,7 +364,6 @@ export default function FuturisticPortfolio() {
           trigger: card,
           start: "top 65%",
           toggleActions: "play none none reverse",
-           markers: true
         },
       });
 
@@ -386,7 +380,6 @@ export default function FuturisticPortfolio() {
           trigger: card,
           start: "top 65%",
           toggleActions: "play none none reverse",
-           markers: true
         },
       });
 
@@ -634,8 +627,7 @@ export default function FuturisticPortfolio() {
         </div>
       </section>
 
-
-       {/* Certifications */}
+      {/* Certifications */}
       <section className="py-24  flex flex-col items-center gap-12 w-full bg-gradient-to-b from-cyan-900 to-black ">
         <Heading heading="Certifications & Awards" />
         <div className="flex px-8 md:p-0 flex-wrap justify-center gap-6 w-full max-w-[1200px]">
@@ -716,8 +708,6 @@ export default function FuturisticPortfolio() {
           ))}
         </div>
       </section>
-
-     
 
       {/* Profiles */}
       <section className="py-24 p-8 flex flex-col items-center bg-black/70 gap-12 w-full">
