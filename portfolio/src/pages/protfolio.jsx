@@ -235,6 +235,7 @@ export default function FuturisticPortfolio() {
         trigger: ".containerSkills",
         start: "top 40%",
         toggleActions: "play none none reverse",
+        scroller: "body",
       },
     });
 
@@ -248,6 +249,7 @@ export default function FuturisticPortfolio() {
           trigger: card,
           start: "top 65%",
           toggleActions: "play none none reverse",
+          scroller: "body",
         },
       });
 
@@ -278,6 +280,7 @@ export default function FuturisticPortfolio() {
           trigger: card,
           start: "top 65%",
           toggleActions: "play none none reverse",
+          scroller: "body",
         },
       });
 
@@ -306,6 +309,7 @@ export default function FuturisticPortfolio() {
           trigger: card,
           start: "top 65%",
           toggleActions: "play none none reverse",
+          scroller: "body",
         },
       });
 
@@ -335,6 +339,7 @@ export default function FuturisticPortfolio() {
           trigger: card,
           start: "top 65%",
           toggleActions: "play none none reverse",
+          scroller: "body",
         },
       });
 
@@ -364,6 +369,7 @@ export default function FuturisticPortfolio() {
           trigger: card,
           start: "top 65%",
           toggleActions: "play none none reverse",
+          scroller: "body",
         },
       });
 
@@ -380,6 +386,7 @@ export default function FuturisticPortfolio() {
           trigger: card,
           start: "top 65%",
           toggleActions: "play none none reverse",
+          scroller: "body",
         },
       });
 
