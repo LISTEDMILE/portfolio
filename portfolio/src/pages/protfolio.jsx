@@ -28,6 +28,7 @@ import {
   FaGlobe,
   FaFileAlt,
 } from "react-icons/fa";
+import { gitHub, linkedIn, portfolio, resume } from "../../globals/links";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -183,19 +184,19 @@ export default function FuturisticPortfolio() {
     {
       platform: "GitHub",
       icon: <FaGithub />,
-      link: "https://github.com/LISTEDMILE",
+      link: gitHub,
     },
     {
       platform: "LinkedIn",
       icon: <FaLinkedin className="text-blue-500" />,
-      link: "https://www.linkedin.com/in/kunal-sharma-5a3a27295?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      link: linkedIn
     },
     {
       platform: "Portfolio",
       icon: <FaGlobe />,
-      link: "https://portfolio-five-wheat-37.vercel.app/",
+      link: portfolio
     },
-    { platform: "Resume", icon: <FaFileAlt />, link: "/resume.pdf" },
+    { platform: "Resume", icon: <FaFileAlt />, link: resume },
   ];
 
   const qualifications = [
@@ -633,48 +634,9 @@ export default function FuturisticPortfolio() {
         </div>
       </section>
 
-      {/* Qualifications */}
-      <section className="py-24 flex flex-col items-center gap-12 bg-gradient-to-b from-cyan-900 to-black  w-full">
-        <Heading heading="Qualifications" />
-        <div className="flex px-12 flex-col md:flex-row md:justify-center gap-8 flex-wrap">
-          {qualifications.map((qual, idx) => (
-            <div
-              key={idx}
-              className="qualificationRef relative p-6 rounded-xl shadow-md transform hover:scale-105 transition-all duration-500 
-               bg-gradient-to-br from-gray-900 to-black
-               text-center border border-gray-700 hover:border-indigo-400 group"
-            >
-              {/* Glow background */}
-              <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-indigo-900 to-gray-900 opacity-20 blur-xl group-hover:opacity-40 transition duration-500"></div>
 
-              {/* Qualification Content */}
-              <div className="relative flex gap-8 justify-around flex-wrap">
-                <div className="flex flex-col gap-4">
-                  <p className="text-xl font-semibold text-white">
-                    {qual.course}
-                  </p>
-                  {qual.trade && (
-                    <p className="text-sm text-gray-300 mt-1 italic">
-                      {qual.trade}
-                    </p>
-                  )}
-                </div>
-                <div className="flex flex-col gap-4">
-                  <p className="text-sm text-gray-400 mt-2">
-                    {qual.organisation}
-                  </p>
-                  <p className="text-sm text-indigo-400 mt-1 font-medium">
-                    {qual.year}
-                  </p>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Certifications */}
-      <section className="py-24  flex flex-col items-center gap-12 w-full mx-auto">
+       {/* Certifications */}
+      <section className="py-24  flex flex-col items-center gap-12 w-full bg-gradient-to-b from-cyan-900 to-black ">
         <Heading heading="Certifications & Awards" />
         <div className="flex px-8 md:p-0 flex-wrap justify-center gap-6 w-full max-w-[1200px]">
           {certifications.map((cert, idx) => (
@@ -714,6 +676,48 @@ export default function FuturisticPortfolio() {
           ))}
         </div>
       </section>
+
+      {/* Qualifications */}
+      <section className="py-24 flex flex-col items-center gap-12  w-full">
+        <Heading heading="Qualifications" />
+        <div className="flex px-12 flex-col md:flex-row md:justify-center gap-8 flex-wrap">
+          {qualifications.map((qual, idx) => (
+            <div
+              key={idx}
+              className="qualificationRef relative p-6 rounded-xl shadow-md transform hover:scale-105 transition-all duration-500 
+               bg-gradient-to-br from-gray-900 to-black
+               text-center border border-gray-700 hover:border-indigo-400 group"
+            >
+              {/* Glow background */}
+              <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-indigo-900 to-gray-900 opacity-20 blur-xl group-hover:opacity-40 transition duration-500"></div>
+
+              {/* Qualification Content */}
+              <div className="relative flex gap-8 justify-around flex-wrap">
+                <div className="flex flex-col gap-4">
+                  <p className="text-xl font-semibold text-white">
+                    {qual.course}
+                  </p>
+                  {qual.trade && (
+                    <p className="text-sm text-gray-300 mt-1 italic">
+                      {qual.trade}
+                    </p>
+                  )}
+                </div>
+                <div className="flex flex-col gap-4">
+                  <p className="text-sm text-gray-400 mt-2">
+                    {qual.organisation}
+                  </p>
+                  <p className="text-sm text-indigo-400 mt-1 font-medium">
+                    {qual.year}
+                  </p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+     
 
       {/* Profiles */}
       <section className="py-24 p-8 flex flex-col items-center bg-black/70 gap-12 w-full">

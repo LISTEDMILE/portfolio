@@ -7,18 +7,19 @@ import {
   FaPhoneAlt,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { gitHub, linkedIn } from "../../globals/links";
 
 export default function Footer() {
   const socials = [
     {
       platform: "GitHub",
       icon: <FaGithub />,
-      link: "https://github.com/LISTEDMILE",
+      link: gitHub,
     },
     {
       platform: "LinkedIn",
       icon: <FaLinkedin />,
-      link: "https://www.linkedin.com/in/kunal-sharma-5a3a27295?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      link: linkedIn,
     },
     {
       platform: "Instagram",

@@ -9,6 +9,7 @@ import {
 } from "react-icons/fa";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { gitHub, linkedIn } from "../../globals/links";
 
 export default function ConnectPage() {
   const cardsRef = useRef([]);
@@ -34,13 +35,13 @@ export default function ConnectPage() {
     {
       platform: "GitHub",
       icon: <FaGithub className="text-5xl text-gray-300" />,
-      link: "https://github.com/LISTEDMILE",
+      link: gitHub,
       glow: "from-gray-700 to-gray-900",
     },
     {
       platform: "LinkedIn",
       icon: <FaLinkedin className="text-5xl text-blue-400" />,
-      link: "https://www.linkedin.com/in/kunal-sharma-5a3a27295?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      link: linkedIn,
       glow: "from-blue-600 to-cyan-500",
     },
     {
