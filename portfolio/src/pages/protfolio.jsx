@@ -156,6 +156,19 @@ export default function FuturisticPortfolio() {
       ],
       certificate: "PMKVY.jpg",
     },
+    {
+  title: "Technical Head",
+  company: "Trinity Cyber Forum (TCF), Computer Society of India (CSI), and Arcadia",
+  startDate: "2025",
+  endDate: "Present",
+  bullets: [
+    "Led and managed technical operations across three student societies.",
+    "Supervised web development projects, coding events, and workshops.",
+    "Built and maintained society websites using modern web technologies.",
+    "Guided teams in implementing automation, design, and deployment workflows.",
+    "Promoted collaboration and innovation through peer mentorship and tech talks.",
+  ],
+},
   ];
 
   const certifications = [
@@ -178,6 +191,7 @@ export default function FuturisticPortfolio() {
     { name: "Sig WebDev - CSI Society of India.", certificate: "CSI.jpg" },
     { name: " Software Programmer - PMKVY. ", certificate: "PMKVY.jpg" },
     { name: " MongoDB", certificate: "MongoDB.pdf" },
+    { name: "Generative AI Literacy by IT-ITeS SSC Nasscom", certificate: "futureSkills.pdf" },
   ];
 
   const profiles = [
@@ -410,6 +424,193 @@ export default function FuturisticPortfolio() {
       });
     });
   });
+
+
+
+  //  useGSAP(() => {
+  //   const isMobile = window.innerWidth < 768;
+
+  //   // 🧭 Set default ScrollTrigger behavior
+  //   ScrollTrigger.defaults({
+  //     scroller: "body",
+  //     invalidateOnRefresh: true,
+  //   });
+
+  //   // 🧍 Hero section animation
+  //   gsap.from(heroRef.current, {
+  //     y: 100,
+  //     opacity: 0,
+  //     duration: 1.5,
+  //     ease: "power4.out",
+  //   });
+
+  //   // 💻 Skills section
+  //   gsap.utils.toArray(".skillsRef").forEach((el) => {
+  //     gsap.from(el, {
+  //       opacity: 0,
+  //       scrollTrigger: {
+  //         trigger: ".containerSkills",
+  //         start: isMobile ? "top 85%" : "top 40%",
+  //         end: "bottom 70%",
+  //         scrub: true,
+  //       },
+  //     });
+  //   });
+
+  //   // 🧱 Project cards
+  //   gsap.utils.toArray(".projectsRef").forEach((card) => {
+  //     gsap.from(card, {
+  //       x: -10,
+  //       opacity: 0,
+  //       scrollTrigger: {
+  //         trigger: card,
+  //         start: isMobile ? "top 85%" : "top 65%",
+  //         end: "bottom 60%",
+  //         scrub: true,
+  //       },
+  //     });
+
+  //     card.addEventListener("mouseenter", () => {
+  //       gsap.to(card, {
+  //         scale: 1.05,
+  //         rotate: 1.5,
+  //         boxShadow: "0px 12px 30px rgba(99, 102, 241, 0.3)",
+  //       });
+  //     });
+  //     card.addEventListener("mouseleave", () => {
+  //       gsap.to(card, {
+  //         scale: 1,
+  //         rotate: 0,
+  //         boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.15)",
+  //       });
+  //     });
+  //   });
+
+  //   // 🧾 Certification cards
+  //   gsap.utils.toArray(".certificationRef").forEach((card) => {
+  //     gsap.from(card, {
+  //       opacity: 0,
+  //       scrollTrigger: {
+  //         trigger: card,
+  //         start: isMobile ? "top 85%" : "top 65%",
+  //         end: "bottom 60%",
+  //         scrub: true,
+  //       },
+  //     });
+
+  //     card.addEventListener("mouseenter", () => {
+  //       gsap.to(card, {
+  //         scale: 1.05,
+  //         boxShadow: "0px 12px 30px rgba(99, 102, 241, 0.3)",
+  //       });
+  //     });
+  //     card.addEventListener("mouseleave", () => {
+  //       gsap.to(card, {
+  //         scale: 1,
+  //         boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.15)",
+  //       });
+  //     });
+  //   });
+
+  //   // 🎓 Qualification cards
+  //   gsap.utils.toArray(".qualificationRef").forEach((card) => {
+  //     gsap.from(card, {
+  //       opacity: 0,
+  //       scrollTrigger: {
+  //         trigger: card,
+  //         start: isMobile ? "top 85%" : "top 65%",
+  //         end: "bottom 60%",
+  //         scrub: true,
+  //       },
+  //     });
+
+  //     card.addEventListener("mouseenter", () => {
+  //       gsap.to(card, {
+  //         scale: 1.05,
+  //         boxShadow: "0px 12px 30px rgba(99, 102, 241, 0.3)",
+  //       });
+  //     });
+  //     card.addEventListener("mouseleave", () => {
+  //       gsap.to(card, {
+  //         scale: 1,
+  //         boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.15)",
+  //       });
+  //     });
+  //   });
+
+  //   // 👤 Profile cards
+  //   gsap.utils.toArray(".profileRef").forEach((card) => {
+  //     gsap.from(card, {
+  //       opacity: 0,
+  //       y: 10,
+  //       scrollTrigger: {
+  //         trigger: card,
+  //         start: isMobile ? "top 85%" : "top 65%",
+  //         end: "bottom 60%",
+  //         scrub: true,
+  //       },
+  //     });
+
+  //     card.addEventListener("mouseenter", () => {
+  //       gsap.to(card, {
+  //         scale: 1.05,
+  //         boxShadow: "0px 12px 30px rgba(99, 102, 241, 0.3)",
+  //       });
+  //     });
+  //     card.addEventListener("mouseleave", () => {
+  //       gsap.to(card, {
+  //         scale: 1,
+  //         boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.15)",
+  //       });
+  //     });
+  //   });
+
+  //   // 💼 Experience cards
+  //   gsap.utils.toArray(".experienceRef").forEach((card) => {
+  //     gsap.from(card, {
+  //       opacity: 0,
+  //       y: 40,
+  //       scale: 0.95,
+  //       scrollTrigger: {
+  //         trigger: card,
+  //         start: isMobile ? "top 85%" : "top 65%",
+  //         end: "bottom 60%",
+  //         scrub: true,
+  //       },
+  //     });
+
+  //     const bullets = card.querySelectorAll(".bullet");
+  //     gsap.from(bullets, {
+  //       opacity: 0,
+  //       x: -20,
+  //       stagger: 0.15,
+  //       delay: 0.3,
+  //       ease: "power3.out",
+  //       scrollTrigger: {
+  //         trigger: card,
+  //         start: isMobile ? "top 85%" : "top 65%",
+  //         end: "bottom 60%",
+  //         scrub: true,
+  //       },
+  //     });
+
+  //     card.addEventListener("mouseenter", () => {
+  //       gsap.to(card, {
+  //         scale: 1.05,
+  //         boxShadow: "0px 12px 30px rgba(99, 102, 241, 0.3)",
+  //         borderColor: "rgba(99, 102, 241, 1)",
+  //       });
+  //     });
+  //     card.addEventListener("mouseleave", () => {
+  //       gsap.to(card, {
+  //         scale: 1,
+  //         boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.15)",
+  //         borderColor: "transparent",
+  //       });
+  //     });
+  //   });
+  // });
+
 
   return (
     <div className="font-sans text-white  min-h-screen overflow-x-hidden relative">
