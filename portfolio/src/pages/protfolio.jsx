@@ -157,29 +157,22 @@ export default function FuturisticPortfolio() {
       certificate: "PMKVY.jpg",
     },
     {
-  title: "Technical Head",
-  company: "Trinity Cyber Forum (TCF), Computer Society of India (CSI), and Arcadia",
-  startDate: "2025",
-  endDate: "Present",
-  bullets: [
-    "Led and managed technical operations across three student societies.",
-    "Supervised web development projects, coding events, and workshops.",
-    "Built and maintained society websites using modern web technologies.",
-    "Guided teams in implementing automation, design, and deployment workflows.",
-    "Promoted collaboration and innovation through peer mentorship and tech talks.",
-  ],
-},
+      title: "Technical Head",
+      company:
+        "Trinity Cyber Forum (TCF), Computer Society of India (CSI), and Arcadia",
+      startDate: "2025",
+      endDate: "Present",
+      bullets: [
+        "Led and managed technical operations across three student societies.",
+        "Supervised web development projects, coding events, and workshops.",
+        "Built and maintained society websites using modern web technologies.",
+        "Guided teams in implementing automation, design, and deployment workflows.",
+        "Promoted collaboration and innovation through peer mentorship and tech talks.",
+      ],
+    },
   ];
 
   const certifications = [
-    {
-      name: " 3rd place, Silver Jubilee Poster Presentation (IPEC) – 2023.jpg",
-      certificate: "poster23.jpg",
-    },
-    {
-      name: " 3rd place, Silver Jubilee Poster Presentation (IPEC) – 2024.jpg",
-      certificate: "poster24.jpg",
-    },
     {
       name: "  IoT for Cyber Physical Systems – IHUB Divya Sampark, IIT Roorkee",
       certificate: "IOT.jpg",
@@ -191,7 +184,30 @@ export default function FuturisticPortfolio() {
     { name: "Sig WebDev - CSI Society of India.", certificate: "CSI.jpg" },
     { name: " Software Programmer - PMKVY. ", certificate: "PMKVY.jpg" },
     { name: " MongoDB", certificate: "MongoDB.pdf" },
-    { name: "Generative AI Literacy by IT-ITeS SSC Nasscom", certificate: "futureSkills.pdf" },
+    {
+      name: "Generative AI Literacy by IT-ITeS SSC Nasscom",
+      certificate: "futureSkills.pdf",
+    },
+    {
+      name: "AI Skills Passport offered by EY and Microsoft",
+      certificate: "EyAiSkillPassport.pdf",
+    },
+    {
+      name: "AWS Academy Graduate - Cloud Foundations - Training Badge",
+      certificate: "awsCloudFoundation.pdf",
+    },
+    {
+      name: "Database Programming with SQL – English",
+      certificate: "oracle.pdf",
+    },
+    {
+      name: " 3rd place, Silver Jubilee Poster Presentation (IPEC) – 2023.jpg",
+      certificate: "poster23.jpg",
+    },
+    {
+      name: " 3rd place, Silver Jubilee Poster Presentation (IPEC) – 2024.jpg",
+      certificate: "poster24.jpg",
+    },
   ];
 
   const profiles = [
@@ -425,8 +441,6 @@ export default function FuturisticPortfolio() {
     });
   });
 
-
-
   //  useGSAP(() => {
   //   const isMobile = window.innerWidth < 768;
 
@@ -611,7 +625,6 @@ export default function FuturisticPortfolio() {
   //   });
   // });
 
-
   return (
     <div className="font-sans text-white  min-h-screen overflow-x-hidden relative">
       <div className="fixed top-0 left-0 bg-black w-screen h-screen overflow-hidden -z-10">
@@ -774,7 +787,7 @@ export default function FuturisticPortfolio() {
                 certificate,
                 type,
               },
-              idx
+              idx,
             ) => (
               <article
                 key={idx}
@@ -830,7 +843,7 @@ export default function FuturisticPortfolio() {
                   )}
                 </div>
               </article>
-            )
+            ),
           )}
         </div>
       </section>
