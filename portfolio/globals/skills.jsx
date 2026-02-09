@@ -1,0 +1,45 @@
+import React from "react";
+
+import {
+  SiReact,
+  SiNodedotjs,
+  SiExpress,
+  SiMongodb,
+  SiJavascript,
+  SiGreensock,
+  SiHtml5,
+  SiCss3,
+  SiTailwindcss,
+  SiBootstrap,
+  SiNextdotjs,
+  SiEjs,
+  SiPython,
+  SiC,
+  SiCplusplus,
+  SiGit,
+  SiGithub,
+} from "react-icons/si";
+
+export const skills = [
+  { name: "React", icon: <SiReact className="text-blue-400" /> },
+  { name: "Node.js", icon: <SiNodedotjs className="text-green-500" /> },
+  { name: "Express", icon: <SiExpress className="text-gray-400" /> },
+  { name: "MongoDB", icon: <SiMongodb className="text-green-600" /> },
+  { name: "GSAP", icon: <SiGreensock className=" text-green-400" /> },
+  { name: "JavaScript", icon: <SiJavascript className="text-yellow-400" /> },
+  { name: "ES6+", icon: <SiJavascript className="text-purple-500" /> },
+  { name: "HTML", icon: <SiHtml5 className="text-orange-500" /> },
+  { name: "CSS", icon: <SiCss3 className="text-blue-500" /> },
+  { name: "Tailwind", icon: <SiTailwindcss className="text-teal-400" /> },
+  { name: "Bootstrap", icon: <SiBootstrap className="text-purple-600" /> },
+  {
+    name: "Next.js (Frontend)",
+    icon: <SiNextdotjs className="text-white" />,
+  },
+  { name: "EJS", icon: <SiEjs className="text-red-500" /> },
+  { name: "Python", icon: <SiPython color="#3776AB" /> },
+  { name: "C", icon: <SiC color="#A8B9CC" /> },
+  { name: "C++", icon: <SiCplusplus color="#00599C" /> },
+  { name: "Git", icon: <SiGit className="text-orange-500" /> },
+  { name: "GitHub", icon: <SiGithub className=" text-white" /> },
+];
