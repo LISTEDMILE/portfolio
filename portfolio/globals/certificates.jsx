@@ -2,6 +2,10 @@ import React from "react";
 
 export const certifications = [
   {
+    name: "Full Stack Web Development with AI Tools under Next Gen Employability Program by Edunet Foundation",
+    certificate: "Edunet.pdf",
+  },
+  {
     name: "  IoT for Cyber Physical Systems – IHUB Divya Sampark, IIT Roorkee",
     certificate: "IOT.jpg",
   },

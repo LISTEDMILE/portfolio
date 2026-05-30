@@ -417,7 +417,7 @@ export default function FuturisticPortfolio() {
           <h1 className="text-6xl md:text-7xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">
             Hi, I'm Kunal Sharma
           </h1>
-          <h3 className="text-3xl mb-6 underline">MERN Stack Developer</h3>
+          <h3 className="text-3xl mb-6 underline">Full Stack Developer</h3>
           <p className="text-xl text-gray-400 mb-6 max-w-lg">
             I build futuristic websites with interactive animations and modern
             web technologies.

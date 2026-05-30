@@ -39,7 +39,7 @@ export default function LandingPage() {
       <div className="absolute inset-0 -z-10 flex justify-center items-center">
         <div className="w-[600px] h-[600px] rounded-full bg-gradient-to-r from-cyan-500/20 to-purple-600/20 blur-3xl animate-pulse" />
       </div>
- 
+
       <img
         src="/Owner.jpg"
         className="h-[200px] w-[200px] md:h-[300px] md:w-[300px] self-center rounded-full border-cyan-500 border mb-8"
@@ -59,7 +59,7 @@ export default function LandingPage() {
         href="/portfolio"
         className="cta-btn neon-glow mt-10 px-8 py-3 text-lg rounded-2xl bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold shadow-lg hover:scale-105 transition-transform"
       >
-        Explore Projects
+        Explore
       </a>
 
       {/* Floating elements */}

@@ -46,7 +46,7 @@ export default function Footer() {
         {/* Left: Logo / Name */}
         <div className="flex flex-col items-center md:items-start gap-2">
           <h2 className="text-2xl font-bold text-white">Kunal Sharma</h2>
-          <p className="text-sm md:text-base">MERN Stack Developer</p>
+          <p className="text-sm md:text-base">Full Stack Developer</p>
         </div>
 
         {/* Center: Navigation Links */}
@@ -81,7 +81,7 @@ export default function Footer() {
 
       {/* Bottom: copyright */}
       <div className="text-center text-gray-500 text-sm mt-4">
-        <p>&copy; {new Date().getFullYear()} Kunal Sharma.</p>
+        <p>{new Date().getFullYear()} Kunal Sharma.</p>
       </div>
     </footer>
   );

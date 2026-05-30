@@ -18,7 +18,14 @@ import {
   SiCplusplus,
   SiGit,
   SiGithub,
+  SiKubernetes,
+  SiCloudinary,
+  SiVercel,
+  SiRender,
+  SiNetlify,
+  SiResend,
 } from "react-icons/si";
+import { VscAzure } from "react-icons/vsc";
 
 export const skills = [
   { name: "React", icon: <SiReact className="text-blue-400" /> },
@@ -40,6 +47,13 @@ export const skills = [
   { name: "Python", icon: <SiPython color="#3776AB" /> },
   { name: "C", icon: <SiC color="#A8B9CC" /> },
   { name: "C++", icon: <SiCplusplus color="#00599C" /> },
-  { name: "Git", icon: <SiGit className="text-orange-500" /> },
-  { name: "GitHub", icon: <SiGithub className=" text-white" /> },
+  { name: "Git", icon: <SiGit className="text-[#F05032]" /> },
+  { name: "GitHub", icon: <SiGithub className="text-[#181717]" /> },
+  { name: "Kubernetes", icon: <SiKubernetes className="text-[#326CE5]" /> },
+  { name: "Azure", icon: <VscAzure className="text-[#0078D4]" /> },
+  { name: "Cloudinary", icon: <SiCloudinary className="text-[#3448C5]" /> },
+  { name: "Vercel", icon: <SiVercel className="text-white" /> },
+  { name: "Render", icon: <SiRender className="text-[#46E3B7]" /> },
+  { name: "Netlify", icon: <SiNetlify className="text-[#00C7B7]" /> },
+  { name: "Resend", icon: <SiResend className="text-[#FFFFFF]" /> },
 ];
