@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { TypeAnimation } from "react-type-animation";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { skills } from "../../globals/skills";
 import { projects } from "../../globals/projects";
@@ -34,6 +35,15 @@ export default function FuturisticPortfolio() {
       ease: "power4.out",
     });
 
+    gsap.from('.heroHead', {
+      delay:0.5,
+      opacity: 0,
+      duration: 1.5,
+      ease: "power4.out",
+    });
+
+     
+    
     gsap.from(".skillsRef", {
       opacity: 0,
       duration: 1,
@@ -218,190 +228,6 @@ export default function FuturisticPortfolio() {
     });
   });
 
-  //  useGSAP(() => {
-  //   const isMobile = window.innerWidth < 768;
-
-  //   // 🧭 Set default ScrollTrigger behavior
-  //   ScrollTrigger.defaults({
-  //     scroller: "body",
-  //     invalidateOnRefresh: true,
-  //   });
-
-  //   // 🧍 Hero section animation
-  //   gsap.from(heroRef.current, {
-  //     y: 100,
-  //     opacity: 0,
-  //     duration: 1.5,
-  //     ease: "power4.out",
-  //   });
-
-  //   // 💻 Skills section
-  //   gsap.utils.toArray(".skillsRef").forEach((el) => {
-  //     gsap.from(el, {
-  //       opacity: 0,
-  //       scrollTrigger: {
-  //         trigger: ".containerSkills",
-  //         start: isMobile ? "top 85%" : "top 40%",
-  //         end: "bottom 70%",
-  //         scrub: true,
-  //       },
-  //     });
-  //   });
-
-  //   // 🧱 Project cards
-  //   gsap.utils.toArray(".projectsRef").forEach((card) => {
-  //     gsap.from(card, {
-  //       x: -10,
-  //       opacity: 0,
-  //       scrollTrigger: {
-  //         trigger: card,
-  //         start: isMobile ? "top 85%" : "top 65%",
-  //         end: "bottom 60%",
-  //         scrub: true,
-  //       },
-  //     });
-
-  //     card.addEventListener("mouseenter", () => {
-  //       gsap.to(card, {
-  //         scale: 1.05,
-  //         rotate: 1.5,
-  //         boxShadow: "0px 12px 30px rgba(99, 102, 241, 0.3)",
-  //       });
-  //     });
-  //     card.addEventListener("mouseleave", () => {
-  //       gsap.to(card, {
-  //         scale: 1,
-  //         rotate: 0,
-  //         boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.15)",
-  //       });
-  //     });
-  //   });
-
-  //   // 🧾 Certification cards
-  //   gsap.utils.toArray(".certificationRef").forEach((card) => {
-  //     gsap.from(card, {
-  //       opacity: 0,
-  //       scrollTrigger: {
-  //         trigger: card,
-  //         start: isMobile ? "top 85%" : "top 65%",
-  //         end: "bottom 60%",
-  //         scrub: true,
-  //       },
-  //     });
-
-  //     card.addEventListener("mouseenter", () => {
-  //       gsap.to(card, {
-  //         scale: 1.05,
-  //         boxShadow: "0px 12px 30px rgba(99, 102, 241, 0.3)",
-  //       });
-  //     });
-  //     card.addEventListener("mouseleave", () => {
-  //       gsap.to(card, {
-  //         scale: 1,
-  //         boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.15)",
-  //       });
-  //     });
-  //   });
-
-  //   // 🎓 Qualification cards
-  //   gsap.utils.toArray(".qualificationRef").forEach((card) => {
-  //     gsap.from(card, {
-  //       opacity: 0,
-  //       scrollTrigger: {
-  //         trigger: card,
-  //         start: isMobile ? "top 85%" : "top 65%",
-  //         end: "bottom 60%",
-  //         scrub: true,
-  //       },
-  //     });
-
-  //     card.addEventListener("mouseenter", () => {
-  //       gsap.to(card, {
-  //         scale: 1.05,
-  //         boxShadow: "0px 12px 30px rgba(99, 102, 241, 0.3)",
-  //       });
-  //     });
-  //     card.addEventListener("mouseleave", () => {
-  //       gsap.to(card, {
-  //         scale: 1,
-  //         boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.15)",
-  //       });
-  //     });
-  //   });
-
-  //   // 👤 Profile cards
-  //   gsap.utils.toArray(".profileRef").forEach((card) => {
-  //     gsap.from(card, {
-  //       opacity: 0,
-  //       y: 10,
-  //       scrollTrigger: {
-  //         trigger: card,
-  //         start: isMobile ? "top 85%" : "top 65%",
-  //         end: "bottom 60%",
-  //         scrub: true,
-  //       },
-  //     });
-
-  //     card.addEventListener("mouseenter", () => {
-  //       gsap.to(card, {
-  //         scale: 1.05,
-  //         boxShadow: "0px 12px 30px rgba(99, 102, 241, 0.3)",
-  //       });
-  //     });
-  //     card.addEventListener("mouseleave", () => {
-  //       gsap.to(card, {
-  //         scale: 1,
-  //         boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.15)",
-  //       });
-  //     });
-  //   });
-
-  //   // 💼 Experience cards
-  //   gsap.utils.toArray(".experienceRef").forEach((card) => {
-  //     gsap.from(card, {
-  //       opacity: 0,
-  //       y: 40,
-  //       scale: 0.95,
-  //       scrollTrigger: {
-  //         trigger: card,
-  //         start: isMobile ? "top 85%" : "top 65%",
-  //         end: "bottom 60%",
-  //         scrub: true,
-  //       },
-  //     });
-
-  //     const bullets = card.querySelectorAll(".bullet");
-  //     gsap.from(bullets, {
-  //       opacity: 0,
-  //       x: -20,
-  //       stagger: 0.15,
-  //       delay: 0.3,
-  //       ease: "power3.out",
-  //       scrollTrigger: {
-  //         trigger: card,
-  //         start: isMobile ? "top 85%" : "top 65%",
-  //         end: "bottom 60%",
-  //         scrub: true,
-  //       },
-  //     });
-
-  //     card.addEventListener("mouseenter", () => {
-  //       gsap.to(card, {
-  //         scale: 1.05,
-  //         boxShadow: "0px 12px 30px rgba(99, 102, 241, 0.3)",
-  //         borderColor: "rgba(99, 102, 241, 1)",
-  //       });
-  //     });
-  //     card.addEventListener("mouseleave", () => {
-  //       gsap.to(card, {
-  //         scale: 1,
-  //         boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.15)",
-  //         borderColor: "transparent",
-  //       });
-  //     });
-  //   });
-  // });
-
   return (
     <div className="font-sans text-white  min-h-screen overflow-x-hidden relative">
       <div className="fixed top-0 left-0 bg-black w-screen h-screen overflow-hidden -z-10">
@@ -411,34 +237,80 @@ export default function FuturisticPortfolio() {
       {/* Hero */}
       <section
         ref={heroRef}
-        className="flex flex-col-reverse md:flex-row items-center justify-center h-screen px-8 pt-[200px] md:pt-0 gap-10 text-center md:text-left max-w-screen-xl mx-auto"
+        className="flex flex-col md:flex-row items-center justify-center min-h-screen px-8 pt-[200px] md:pt-0 gap-10 md:gap-40 text-center md:text-left max-w-screen-xl mx-auto"
       >
-        <div className="flex-1">
-          <h1 className="text-6xl md:text-7xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">
-            Hi, I'm Kunal Sharma
-          </h1>
-          <h3 className="text-3xl mb-6 underline">Full Stack Developer</h3>
-          <p className="text-xl text-gray-400 mb-6 max-w-lg">
-            I build futuristic websites with interactive animations and modern
-            web technologies.
+          <div className="w-full md:w-80 md:h-80 flex justify-center  ">
+          <div className="  relative">
+            <img
+              src="/Owner.jpg"
+              alt="Myse"
+              className="w-64 h-64 rounded-full border-4 border-blue-500 md:w-80 md:h-80   shadow-2xl object-cover"
+            />
+
+             <div className="absolute -bottom-5 -left-8 backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl px-6 py-4 z-20">
+
+          <h3 className="font-semibold text-white">
+            Building
+          </h3>
+
+          <p className="text-gray-400 text-sm">
+            Modern Web Experiences
+          </p>
+
+        </div>
+
+        <div className="absolute top-10 -right-8 backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl px-5 py-3">
+
+          🚀 Full Stack
+
+        </div>
+          </div>
+        </div>
+        <div className="flex flex-col w-full md:w-[60%] md:max-w-[800px] ">
+         
+
+          
+       
+          
+
+
+          <h1 className="heroHead">
+    <span className="block text-white text-lg">Hi, I'm</span>
+
+    <span className="block text-8xl md:text-8xl font-black text-cyan-300 tracking-[-6px] rotate-[-2deg] inline-block">
+        Kunal
+            </span>
+            <br/>
+
+    <span className="block text-8xl md:text-8xl font-black text-white tracking-[-6px] rotate-[2deg] inline-block  mb-10">
+        Sharma
+    </span>
+</h1>
+          <h3 className="block text-xl md:text-2xl font-medium tracking-[0.35em] uppercase text-zinc-500 mb-10 ">Full Stack Developer</h3>
+          <p className="heroPara text-xl text-left text-gray-400 mb-6 max-w-lg">
+             <TypeAnimation
+  sequence={[
+    "I build futuristic websites with interactive animations and modern web technologies.",
+    2000,
+  ]}
+  wrapper="h1"
+  speed={45}
+  cursor={true}
+  
+/>
+            
           </p>
           <a
             href="/connect"
-            className="inline-block px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full font-semibold transform hover:scale-105 transition-transform duration-300"
+            className="inline-block px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full font-semibold transform hover:scale-105 transition-transform duration-300 w-fit"
           >
             Contact Me
           </a>
         </div>
-        <div className="flex-1 flex justify-center md:justify-end">
-          <div className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-blue-500 shadow-2xl">
-            <img
-              src="/Owner.jpg"
-              alt="Myse"
-              className="w-full h-full object-cover"
-            />
-          </div>
-        </div>
+      
       </section>
+
+ 
 
       {/* Tech Stack */}
       <section className="py-24 flex flex-col items-center gap-12">
