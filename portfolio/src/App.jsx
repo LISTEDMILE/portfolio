@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 import LandingPage from "./pages/LandingPage";
 import PortfolioPage from "./pages/protfolio";
 import ConnectPage from "./pages/connectMe";
+import ErrorPage from "./pages/ErrorPage";
 
 function Layout() {
   return (
@@ -27,6 +28,7 @@ function App() {
         },
         { path: "/portfolio", element: <PortfolioPage /> },
         { path: "/connect", element: <ConnectPage /> },
+        {path:"*",element:<ErrorPage/>}
       ],
     },
   ]);
