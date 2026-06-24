@@ -35,15 +35,13 @@ export default function FuturisticPortfolio() {
       ease: "power4.out",
     });
 
-    gsap.from('.heroHead', {
-      delay:0.5,
+    gsap.from(".heroHead", {
+      delay: 0.5,
       opacity: 0,
       duration: 1.5,
       ease: "power4.out",
     });
 
-     
-    
     gsap.from(".skillsRef", {
       opacity: 0,
       duration: 1,
@@ -239,7 +237,7 @@ export default function FuturisticPortfolio() {
         ref={heroRef}
         className="flex flex-col md:flex-row items-center justify-center min-h-screen px-8 pt-[200px] md:pt-0 gap-10 md:gap-40 text-center md:text-left max-w-screen-xl mx-auto"
       >
-          <div className="w-full md:w-80 md:h-80 flex justify-center  ">
+        <div className="w-full md:w-80 md:h-80 flex justify-center  ">
           <div className="  relative">
             <img
               src="/Owner.jpg"
@@ -247,58 +245,43 @@ export default function FuturisticPortfolio() {
               className="w-64 h-64 rounded-full border-4 border-blue-500 md:w-80 md:h-80   shadow-2xl object-cover"
             />
 
-             <div className="absolute -bottom-5 -left-8 backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl px-6 py-4 z-20">
+            <div className="absolute -bottom-5 -left-8 backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl px-6 py-4 z-20">
+              <h3 className="font-semibold text-white">Building</h3>
 
-          <h3 className="font-semibold text-white">
-            Building
-          </h3>
+              <p className="text-gray-400 text-sm">Modern Web Experiences</p>
+            </div>
 
-          <p className="text-gray-400 text-sm">
-            Modern Web Experiences
-          </p>
-
-        </div>
-
-        <div className="absolute top-10 -right-8 backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl px-5 py-3">
-
-          🚀 Full Stack
-
-        </div>
+            <div className="absolute top-10 -right-8 backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl px-5 py-3">
+              🚀 Full Stack
+            </div>
           </div>
         </div>
         <div className="flex flex-col w-full md:w-[60%] md:max-w-[800px] ">
-         
-
-          
-       
-          
-
-
           <h1 className="heroHead">
-    <span className="block text-white text-lg">Hi, I'm</span>
+            <span className="block text-white text-lg">Hi, I'm</span>
 
-    <span className="block text-8xl md:text-8xl font-black text-cyan-300 tracking-[-6px] rotate-[-2deg] inline-block">
-        Kunal
+            <span className="block text-8xl md:text-8xl font-black text-cyan-300 tracking-[-6px] rotate-[-2deg] inline-block">
+              Kunal
             </span>
-            <br/>
+            <br />
 
-    <span className="block text-8xl md:text-8xl font-black text-white tracking-[-6px] rotate-[2deg] inline-block  mb-10">
-        Sharma
-    </span>
-</h1>
-          <h3 className="block text-xl md:text-2xl font-medium tracking-[0.35em] uppercase text-zinc-500 mb-10 ">Full Stack Developer</h3>
+            <span className="block text-8xl md:text-8xl font-black text-white tracking-[-6px] rotate-[2deg] inline-block  mb-10">
+              Sharma
+            </span>
+          </h1>
+          <h3 className="block text-xl md:text-2xl font-medium tracking-[0.35em] uppercase text-zinc-500 mb-10 ">
+            Full Stack Developer
+          </h3>
           <p className="heroPara text-xl text-left text-gray-400 mb-6 max-w-lg">
-             <TypeAnimation
-  sequence={[
-    "I build futuristic websites with interactive animations and modern web technologies.",
-    2000,
-  ]}
-  wrapper="h1"
-  speed={45}
-  cursor={true}
-  
-/>
-            
+            <TypeAnimation
+              sequence={[
+                "I build futuristic websites with interactive animations and modern web technologies.",
+                2000,
+              ]}
+              wrapper="h1"
+              speed={45}
+              cursor={true}
+            />
           </p>
           <a
             href="/connect"
@@ -307,10 +290,7 @@ export default function FuturisticPortfolio() {
             Contact Me
           </a>
         </div>
-      
       </section>
-
- 
 
       {/* Tech Stack */}
       <section className="py-24 flex flex-col items-center gap-12">
@@ -591,7 +571,7 @@ export default function FuturisticPortfolio() {
               className="profileRef relative p-4 rounded-2xl items-center flex flex-col flex-1  w-full md:w-fit
              shadow-lg hover:shadow-indigo-500/30 transition-all duration-500
              border border-white/10 hover:border-indigo-400/50
-             transform hover:scale-105 group gap-4"
+             transform hover:scale-105 group gap-4 text-nowrap"
             >
               {/* Glow border effect */}
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-red-900 to-black opacity-20 blur-xl group-hover:opacity-40 transition duration-500"></div>

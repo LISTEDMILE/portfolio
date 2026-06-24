@@ -1,8 +1,15 @@
 import React from "react";
 
 import { FaGithub, FaLinkedin, FaGlobe, FaFileAlt } from "react-icons/fa";
-import { SiLeetcode } from "react-icons/si";
-import { resume, portfolio, gitHub, linkedIn, leetCode } from "./links";
+import { SiLeetcode, SiCodingninjas } from "react-icons/si";
+import {
+  resume,
+  portfolio,
+  gitHub,
+  linkedIn,
+  leetCode,
+  codingNinjas,
+} from "./links";
 export const profiles = [
   {
     platform: "GitHub",
@@ -28,5 +35,10 @@ export const profiles = [
     platform: "LeetCode",
     icon: <SiLeetcode className="text-[#FFA116]" />,
     link: leetCode,
+  },
+  {
+    platform: "Coding Ninjas",
+    icon: <SiCodingninjas className="text-[#DD6620]" />,
+    link: codingNinjas,
   },
 ];
