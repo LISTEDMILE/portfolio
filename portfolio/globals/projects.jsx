@@ -47,6 +47,14 @@ export const projects = [
     live: "https://www.b365advisors.com/",
   },
   {
+    name: "CSI-IPEC",
+    image: "/CSILogo.png",
+    description:
+      "Developed the official website for the CSI IPEC student chapter in collaboration with a teammate as the Technical Head. Built a responsive and modern platform to showcase society events, team members, achievements, and announcements, ensuring an intuitive user experience and efficient content management.",
+    tech: ["ReactJS", "NodeJs", "GSAP", "Tailwind", "ExpressJs"],
+    live: "https://csiipec.vercel.app/",
+  },
+  {
     name: "BaseChanger",
     image: "/baseChanger.png",
     description:

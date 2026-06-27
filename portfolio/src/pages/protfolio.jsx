@@ -27,6 +27,8 @@ function Heading({ heading }) {
 export default function FuturisticPortfolio() {
   const heroRef = useRef(null);
 
+  const allSkills = skills.flatMap((cat) => cat.skills);
+
   useGSAP(() => {
     gsap.from(heroRef.current, {
       y: 100,
@@ -40,18 +42,6 @@ export default function FuturisticPortfolio() {
       opacity: 0,
       duration: 1.5,
       ease: "power4.out",
-    });
-
-    gsap.from(".skillsRef", {
-      opacity: 0,
-      duration: 1,
-      stagger: 0.1,
-      scrollTrigger: {
-        trigger: ".containerSkills",
-        start: "top 40%",
-        toggleActions: "play none none reverse",
-        scroller: "body",
-      },
     });
 
     gsap.utils.toArray(".projectsRef").forEach((card) => {
@@ -272,17 +262,17 @@ export default function FuturisticPortfolio() {
           <h3 className="block text-xl md:text-2xl font-medium tracking-[0.35em] uppercase text-zinc-500 mb-10 ">
             Full Stack Developer
           </h3>
-          <p className="heroPara text-xl text-left text-gray-400 mb-6 max-w-lg">
+          <h1 className="heroPara text-xl text-left text-gray-400 mb-6 max-w-lg">
             <TypeAnimation
               sequence={[
                 "I build futuristic websites with interactive animations and modern web technologies.",
                 2000,
               ]}
-              wrapper="h1"
+              wrapper="p"
               speed={45}
               cursor={true}
             />
-          </p>
+          </h1>
           <a
             href="/connect"
             className="inline-block px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full font-semibold transform hover:scale-105 transition-transform duration-300 w-fit"
@@ -293,40 +283,107 @@ export default function FuturisticPortfolio() {
       </section>
 
       {/* Tech Stack */}
-      <section className="py-24 flex flex-col items-center gap-12">
+      <section id="skills" className="relative py-32 overflow-hidden">
         <Heading heading="Tech Stack" />
 
-        <div className="flex justify-center items-center h-[500px] w-[500px] p-10  animate-spin-slow  rounded-full scale-75 md:scale-100">
-          <div className=" h-[80px] w-[80px] absolute bg-gradient-to-br from-blue-500 to-purple-60 rounded-full  "></div>
+        <div className="relative z-10 mx-auto flex flex-col items-center px-6 lg:px-12">
+          <p className="mt-5 mb-15 max-w-3xl text-center text-gray-400 leading-8">
+            Technologies, frameworks and tools I use to build fast, scalable and
+            modern web applications.
+          </p>
 
-          {skills.map((tech, idx) => {
-            const angle = (idx / skills.length) * 2 * Math.PI; // divide full circle by count
-            const radius = 200; // circle radius
-            const x = Math.cos(angle) * radius;
-            const y = Math.sin(angle) * radius;
+          <div className="flex h-[500px] w-[500px] items-center justify-center rounded-full p-10 scale-75 animate-spin-slow md:scale-100">
+            <div className="absolute h-[80px] w-[80px] rounded-full bg-gradient-to-br from-blue-500 to-purple-60"></div>
 
-            return (
+            {allSkills.map((tech, idx) => {
+              const angle = (idx / allSkills.length) * 2 * Math.PI;
+              const radius = 200;
+              const x = Math.cos(angle) * radius;
+              const y = Math.sin(angle) * radius;
+
+              return (
+                <div
+                  key={idx}
+                  style={{ transform: `translate(${x}px, ${y}px)` }}
+                  className="absolute rounded-full p-2 text-4xl"
+                >
+                  {tech.icon}
+                </div>
+              );
+            })}
+          </div>
+
+          <div className="mt-24 flex w-full max-w-6xl flex-col gap-12">
+            {skills.map((category, index) => (
               <div
-                key={idx}
-                style={{ transform: `translate(${x}px, ${y}px)` }}
-                className="absolute text-4xl  p-2 rounded-full"
+                key={index}
+                className="skill-category group relative overflow-hidden rounded-[32px] border border-white/10 bg-gradient-to-br from-white/[0.05] to-white/[0.02] p-8 backdrop-blur-2xl transition-all duration-500 hover:-translate-y-1 hover:border-cyan-500/30 hover:shadow-[0_0_60px_rgba(34,211,238,.12)]"
               >
-                {tech.icon}
-              </div>
-            );
-          })}
-        </div>
+                {/* Glow */}
 
-        <div className=" containerSkills flex flex-col md:flex-row justify-center bg-white/5  w-full px-4 md:px-12 py-12 gap-12 flex-wrap">
-          {skills.map((tech, idx) => (
-            <div
-              key={idx}
-              className="skillsRef py-4 px-8 md:px-20 bg-gray-800 rounded-xl shadow-md transform hover:scale-105 transition-transform duration-300 flex md:flex-col items-center gap-8 md:gap-4 w-full md:w-fit"
-            >
-              <h1 className="text-5xl">{tech.icon}</h1>
-              <h3 className="text-2xl font-semibold mb-1">{tech.name}</h3>
-            </div>
-          ))}
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(34,211,238,.10),transparent_55%)] opacity-0 duration-500 group-hover:opacity-100" />
+
+                <div className="relative z-10">
+                  {/* Header */}
+
+                  <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
+                    <div>
+                      <h2 className="mt-2 text-3xl font-bold">
+                        {category.title}
+                      </h2>
+
+                      <div className="mt-5 h-[4px] w-16 overflow-hidden rounded-full bg-white/10">
+                        <div className="h-full w-full origin-left scale-x-0 rounded-full bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 transition-transform duration-700 group-hover:scale-x-100" />
+                      </div>
+                    </div>
+
+                    <div className="rounded-xl border border-white/10 bg-white/[0.04] px-5 py-3 w-fit self-end">
+                      <span className="text-3xl font-bold text-cyan-400">
+                        {category.skills.length}
+                      </span>
+
+                      <p className="text-sm text-gray-400">Technologies</p>
+                    </div>
+                  </div>
+
+                  {/* Skills */}
+
+                  <div className="mt-10 flex flex-wrap gap-4">
+                    {category.skills.map((skill, idx) => (
+                      <div
+                        key={idx}
+                        className="skill-pill w-full sm:w-fit group/pill relative flex cursor-default items-center gap-4 overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/[0.06] to-white/[0.02] px-6 py-4 backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:scale-[1.03] hover:border-cyan-400/60 hover:shadow-[0_0_35px_rgba(34,211,238,.18)]"
+                      >
+                        {/* Animated Glow */}
+
+                        <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-transparent to-purple-500/10 opacity-0 transition-all duration-500 group-hover/pill:opacity-100" />
+
+                        {/* Shine Effect */}
+
+                        <div className="absolute -left-32 top-0 h-full w-24 rotate-12 bg-gradient-to-r from-transparent via-white/20 to-transparent transition-all duration-1000 group-hover/pill:left-[130%]" />
+
+                        {/* Icon */}
+
+                        <div className="relative flex h-11 w-11 items-center justify-center rounded-xl bg-white/5 transition-all duration-300 group-hover/pill:rotate-6 group-hover/pill:scale-110 group-hover/pill:bg-cyan-500/15">
+                          <span className="text-2xl">{skill.icon}</span>
+                        </div>
+
+                        {/* Name */}
+
+                        <div className="relative">
+                          <h3 className="text-base font-medium transition-all duration-300 group-hover/pill:text-cyan-300">
+                            {skill.name}
+                          </h3>
+
+                          <div className="mt-1 h-[2px] w-0 rounded-full bg-gradient-to-r from-cyan-400 to-purple-500 transition-all duration-500 group-hover/pill:w-full" />
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
