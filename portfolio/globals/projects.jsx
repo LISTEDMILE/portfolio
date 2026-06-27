@@ -53,6 +53,6 @@ export const projects = [
       " Engineered an algorithm-driven tool for generating, converting, and calculating across multiple number bases (binary, decimal, hexadecimal, etc.) with high accuracy and efficiency.",
     tech: ["HTML", "CSS", "JavaScript"],
     live: "https://basechange.netlify.app/",
-    github: "https://github.com/LISTEDMILE/BASE-CHANGER.git",
+    github: "https://github.com/LISTEDMILE/BaseChange",
   },
 ];
