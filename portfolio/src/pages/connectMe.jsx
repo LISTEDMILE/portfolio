@@ -1,15 +1,8 @@
 import React, { useRef } from "react";
 import gsap from "gsap";
-import {
-  FaGithub,
-  FaLinkedin,
-  FaInstagram,
-  FaDiscord,
-  FaPhoneAlt,
-} from "react-icons/fa";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { gitHub, linkedIn } from "../../globals/links";
+import { socials } from "../../globals/connect";
 
 export default function ConnectPage() {
   const cardsRef = useRef([]);
@@ -31,39 +24,6 @@ export default function ConnectPage() {
     });
   }, []);
 
-  const links = [
-    {
-      platform: "GitHub",
-      icon: <FaGithub className="text-5xl text-gray-300" />,
-      link: gitHub,
-      glow: "from-gray-700 to-gray-900",
-    },
-    {
-      platform: "LinkedIn",
-      icon: <FaLinkedin className="text-5xl text-blue-400" />,
-      link: linkedIn,
-      glow: "from-blue-600 to-cyan-500",
-    },
-    {
-      platform: "Instagram",
-      icon: <FaInstagram className="text-5xl text-pink-400" />,
-      link: "https://instagram.com/your-handle",
-      glow: "from-pink-500 to-purple-500",
-    },
-    {
-      platform: "Discord",
-      icon: <FaDiscord className="text-5xl text-indigo-400" />,
-      link: "https://discordapp.com/users/your-id",
-      glow: "from-indigo-500 to-purple-700",
-    },
-    {
-      platform: "Mobile",
-      icon: <FaPhoneAlt className="text-4xl text-green-400" />,
-      link: "tel:+91XXXXXXXXXX",
-      glow: "from-green-500 to-teal-500",
-    },
-  ];
-
   return (
     <div className="relative min-h-screen  text-white px-6 md:px-16 py-20">
       {/* Background Glow */}
@@ -78,7 +38,7 @@ export default function ConnectPage() {
 
       {/* Cards */}
       <div className="flex flex-wrap justify-center gap-10 max-w-5xl mx-auto z-10">
-        {links.map((item, idx) => (
+        {socials.map((item, idx) => (
           <a
             key={idx}
             ref={(el) => (cardsRef.current[idx] = el)}
@@ -95,7 +55,9 @@ export default function ConnectPage() {
             ></div>
 
             {/* Icon */}
-            <span className="relative z-10">{item.icon}</span>
+            <span className="relative z-10">
+              <item.icon className={`${item.className}`} />
+            </span>
 
             {/* Platform Name */}
             <p className="relative z-10 text-xl font-semibold tracking-wide">

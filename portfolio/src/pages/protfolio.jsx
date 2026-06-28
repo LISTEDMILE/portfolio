@@ -27,7 +27,12 @@ function Heading({ heading }) {
 export default function FuturisticPortfolio() {
   const heroRef = useRef(null);
 
-  const allSkills = skills.flatMap((cat) => cat.skills);
+  const allSkills = skills.flatMap((cat) =>
+    cat.skills.map((skill) => ({
+      icon: skill.icon,
+      className: skill.className,
+    })),
+  );
 
   useGSAP(() => {
     gsap.from(heroRef.current, {
@@ -307,7 +312,7 @@ export default function FuturisticPortfolio() {
                   style={{ transform: `translate(${x}px, ${y}px)` }}
                   className="absolute rounded-full p-2 text-4xl"
                 >
-                  {tech.icon}
+                  <tech.icon className={`${tech.className}`} />
                 </div>
               );
             })}
@@ -353,7 +358,9 @@ export default function FuturisticPortfolio() {
                         <div className="absolute -left-32 top-0 h-full w-24 rotate-12 bg-gradient-to-r from-transparent via-white/20 to-transparent transition-all duration-1000 group-hover/pill:left-[130%] group-active/pill:left-[130%]" />
 
                         <div className="relative flex h-11 w-11 items-center justify-center rounded-xl bg-white/5 transition-all duration-300 group-hover/pill:rotate-6 group-hover/pill:scale-110 group-hover/pill:bg-cyan-500/15 group-active/pill:scale-110 group-active/pill:bg-cyan-500/15">
-                          <span className="text-2xl">{skill.icon}</span>
+                          <span className="text-2xl">
+                            <skill.icon className={`${skill.className}`} />
+                          </span>
                         </div>
 
                         <div className="relative">
@@ -619,7 +626,9 @@ export default function FuturisticPortfolio() {
               {/* Glow border effect */}
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-red-900 to-black opacity-20 blur-xl group-hover:opacity-40 transition duration-500"></div>
 
-              <span className="text-6xl">{cert.icon}</span>
+              <span className="text-6xl">
+                <cert.icon className={`${cert.className}`} />
+              </span>
               <p className=" text-lg font-semibold text-white tracking-wide">
                 {cert.platform}
               </p>

@@ -1,39 +1,8 @@
 import React from "react";
-import {
-  FaGithub,
-  FaLinkedin,
-  FaInstagram,
-  FaDiscord,
-  FaPhoneAlt,
-} from "react-icons/fa";
 import { Link } from "react-router-dom";
-import { gitHub, linkedIn } from "../../globals/links";
+import { socials } from "../../globals/connect";
 
 export default function Footer() {
-  const socials = [
-    {
-      platform: "GitHub",
-      icon: <FaGithub />,
-      link: gitHub,
-    },
-    {
-      platform: "LinkedIn",
-      icon: <FaLinkedin />,
-      link: linkedIn,
-    },
-    {
-      platform: "Instagram",
-      icon: <FaInstagram />,
-      link: "https://instagram.com/your-handle",
-    },
-    {
-      platform: "Discord",
-      icon: <FaDiscord />,
-      link: "https://discordapp.com/users/your-id",
-    },
-    { platform: "Mobile", icon: <FaPhoneAlt />, link: "tel:+91XXXXXXXXXX" },
-  ];
-
   const navLinks = [
     { name: "Home", href: "/" },
     { name: "Portfolio", href: "/portfolio" },
@@ -73,7 +42,7 @@ export default function Footer() {
               className="text-gray-300 hover:text-white transition-colors duration-300 text-2xl md:text-xl"
               aria-label={social.platform}
             >
-              {social.icon}
+              <social.icon />
             </a>
           ))}
         </div>

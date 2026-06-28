@@ -1,5 +1,3 @@
-import React from "react";
-
 import { FaGithub, FaLinkedin, FaGlobe, FaFileAlt } from "react-icons/fa";
 import { SiLeetcode, SiCodingninjas } from "react-icons/si";
 import {
@@ -13,32 +11,38 @@ import {
 export const profiles = [
   {
     platform: "GitHub",
-    icon: <FaGithub className="text-white" />,
+    icon: FaGithub,
+    className: "text-white",
     link: gitHub,
   },
   {
     platform: "LinkedIn",
-    icon: <FaLinkedin className="text-[#0A66C2]" />,
+    icon: FaLinkedin,
+    className: "text-[#0A66C2]",
     link: linkedIn,
   },
   {
     platform: "Portfolio",
-    icon: <FaGlobe className="text-[#38BDF8]" />,
+    icon: FaGlobe,
+    className: "text-[#38BDF8]",
     link: portfolio,
   },
   {
     platform: "Resume",
-    icon: <FaFileAlt className="text-[#EF4444]" />,
+    icon: FaFileAlt,
+    className: "text-[#EF4444]",
     link: resume,
   },
   {
     platform: "LeetCode",
-    icon: <SiLeetcode className="text-[#FFA116]" />,
+    icon: SiLeetcode,
+    className: "text-[#FFA116]",
     link: leetCode,
   },
   {
     platform: "Coding Ninjas",
-    icon: <SiCodingninjas className="text-[#DD6620]" />,
+    icon: SiCodingninjas,
+    className: "text-[#DD6620]",
     link: codingNinjas,
   },
 ];

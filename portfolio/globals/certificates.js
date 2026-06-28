@@ -1,5 +1,3 @@
-import React from "react";
-
 export const certifications = [
   {
     name: "Full Stack Web Development with AI Tools under Next Gen Employability Program by Edunet Foundation",
