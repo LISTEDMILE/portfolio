@@ -317,9 +317,9 @@ export default function FuturisticPortfolio() {
             {skills.map((category, index) => (
               <div
                 key={index}
-                className="skill-category group relative overflow-hidden rounded-[32px] border border-white/10 bg-[#011815] p-8 transform-gpu will-change-transform transition-transform transition-colors duration-300 hover:-translate-y-1 hover:border-cyan-400/50"
+                className="skill-category group relative overflow-hidden rounded-[32px] border border-white/10 bg-[#011815] p-8 transform-gpu will-change-transform transition-transform transition-colors duration-300 hover:-translate-y-1 hover:border-cyan-400/50 active:-translate-y-1 active:border-cyan-400/50"
               >
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(34,211,238,.10),transparent_85%)] opacity-100 duration-500 group-hover:opacity-0" />
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(34,211,238,.10),transparent_85%)] opacity-100 duration-500 group-hover:opacity-0 group-active:opacity-0" />
 
                 <div className="relative z-10">
                   <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
@@ -329,7 +329,7 @@ export default function FuturisticPortfolio() {
                       </h2>
 
                       <div className="mt-5 h-[4px] w-16 overflow-hidden rounded-full bg-white/10">
-                        <div className="h-full w-full origin-left scale-x-0 rounded-full bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 transition-transform duration-700 group-hover:scale-x-100" />
+                        <div className="h-full w-full origin-left scale-x-0 rounded-full bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 transition-transform duration-700 group-hover:scale-x-100 group-active:scale-x-100" />
                       </div>
                     </div>
 
@@ -346,22 +346,22 @@ export default function FuturisticPortfolio() {
                     {category.skills.map((skill, idx) => (
                       <div
                         key={idx}
-                        className="skill-pill w-full sm:w-fit group/pill relative flex cursor-default items-center gap-4 overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/[0.06] to-white/[0.02] px-6 py-4 transition-all duration-500 hover:-translate-y-2 hover:scale-[1.03] hover:border-cyan-400/60 hover:shadow-md shadow-black"
+                        className="skill-pill w-full sm:w-fit group/pill relative flex cursor-default items-center gap-4 overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/[0.06] to-white/[0.02] px-6 py-4 transition-all duration-500 hover:-translate-y-2 hover:scale-[1.03] active:scale-[1.03] hover:border-cyan-400/60 active:border-cyan-400/60 hover:shadow-md active:shadow-md shadow-black"
                       >
-                        <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-transparent to-purple-500/10 opacity-0 transition-all duration-500 group-hover/pill:opacity-100" />
+                        <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-transparent to-purple-500/10 opacity-0 transition-all duration-500 group-hover/pill:opacity-100 group-active/pill:opacity-100" />
 
-                        <div className="absolute -left-32 top-0 h-full w-24 rotate-12 bg-gradient-to-r from-transparent via-white/20 to-transparent transition-all duration-1000 group-hover/pill:left-[130%]" />
+                        <div className="absolute -left-32 top-0 h-full w-24 rotate-12 bg-gradient-to-r from-transparent via-white/20 to-transparent transition-all duration-1000 group-hover/pill:left-[130%] group-active/pill:left-[130%]" />
 
-                        <div className="relative flex h-11 w-11 items-center justify-center rounded-xl bg-white/5 transition-all duration-300 group-hover/pill:rotate-6 group-hover/pill:scale-110 group-hover/pill:bg-cyan-500/15">
+                        <div className="relative flex h-11 w-11 items-center justify-center rounded-xl bg-white/5 transition-all duration-300 group-hover/pill:rotate-6 group-hover/pill:scale-110 group-hover/pill:bg-cyan-500/15 group-active/pill:scale-110 group-active/pill:bg-cyan-500/15">
                           <span className="text-2xl">{skill.icon}</span>
                         </div>
 
                         <div className="relative">
-                          <h3 className="text-base font-medium transition-all duration-300 group-hover/pill:text-cyan-300">
+                          <h3 className="text-base font-medium transition-all duration-300 group-hover/pill:text-cyan-300 group-active/pill:text-cyan-300">
                             {skill.name}
                           </h3>
 
-                          <div className="mt-1 h-[2px] w-0 rounded-full bg-gradient-to-r from-cyan-400 to-purple-500 transition-all duration-500 group-hover/pill:w-full" />
+                          <div className="mt-1 h-[2px] w-0 rounded-full bg-gradient-to-r from-cyan-400 to-purple-500 transition-all duration-500 group-hover/pill:w-full group-active/pill:w-full" />
                         </div>
                       </div>
                     ))}
