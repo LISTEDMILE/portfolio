@@ -317,15 +317,11 @@ export default function FuturisticPortfolio() {
             {skills.map((category, index) => (
               <div
                 key={index}
-                className="skill-category group relative overflow-hidden rounded-[32px] border border-white/10 bg-gradient-to-br from-white/[0.05] to-white/[0.02] p-8 backdrop-blur-2xl transition-all duration-500 hover:-translate-y-1 hover:border-cyan-500/30 hover:shadow-[0_0_60px_rgba(34,211,238,.12)]"
+                className="skill-category group relative overflow-hidden rounded-[32px] border border-white/10 bg-[#011815] p-8 transform-gpu will-change-transform transition-transform transition-colors duration-300 hover:-translate-y-1 hover:border-cyan-400/50"
               >
-                {/* Glow */}
-
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(34,211,238,.10),transparent_55%)] opacity-0 duration-500 group-hover:opacity-100" />
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(34,211,238,.10),transparent_85%)] opacity-100 duration-500 group-hover:opacity-0" />
 
                 <div className="relative z-10">
-                  {/* Header */}
-
                   <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
                     <div>
                       <h2 className="mt-2 text-3xl font-bold">
@@ -346,29 +342,19 @@ export default function FuturisticPortfolio() {
                     </div>
                   </div>
 
-                  {/* Skills */}
-
                   <div className="mt-10 flex flex-wrap gap-4">
                     {category.skills.map((skill, idx) => (
                       <div
                         key={idx}
-                        className="skill-pill w-full sm:w-fit group/pill relative flex cursor-default items-center gap-4 overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/[0.06] to-white/[0.02] px-6 py-4 backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:scale-[1.03] hover:border-cyan-400/60 hover:shadow-[0_0_35px_rgba(34,211,238,.18)]"
+                        className="skill-pill w-full sm:w-fit group/pill relative flex cursor-default items-center gap-4 overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/[0.06] to-white/[0.02] px-6 py-4 transition-all duration-500 hover:-translate-y-2 hover:scale-[1.03] hover:border-cyan-400/60 hover:shadow-md shadow-black"
                       >
-                        {/* Animated Glow */}
-
                         <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-transparent to-purple-500/10 opacity-0 transition-all duration-500 group-hover/pill:opacity-100" />
 
-                        {/* Shine Effect */}
-
                         <div className="absolute -left-32 top-0 h-full w-24 rotate-12 bg-gradient-to-r from-transparent via-white/20 to-transparent transition-all duration-1000 group-hover/pill:left-[130%]" />
-
-                        {/* Icon */}
 
                         <div className="relative flex h-11 w-11 items-center justify-center rounded-xl bg-white/5 transition-all duration-300 group-hover/pill:rotate-6 group-hover/pill:scale-110 group-hover/pill:bg-cyan-500/15">
                           <span className="text-2xl">{skill.icon}</span>
                         </div>
-
-                        {/* Name */}
 
                         <div className="relative">
                           <h3 className="text-base font-medium transition-all duration-300 group-hover/pill:text-cyan-300">
