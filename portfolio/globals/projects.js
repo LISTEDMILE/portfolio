@@ -1,23 +1,5 @@
 export const projects = [
   {
-    name: "HireSphere",
-    image: "/hireSphere.png",
-    description:
-      "Built a full-stack recruitment platform with job posting, candidate application, shortlisting, hiring, and talent-pool features; boosted processing speed and recruiter–applicant engagement. ",
-    tech: ["React", "NodeJs", "ExpressJs", "MongoDB", "GSAP", "Cloudinary"],
-    live: "https://hire-sphere-sy.vercel.app/",
-    github: "https://github.com/LISTEDMILE/HireSphere.git",
-  },
-  {
-    name: "UsStory",
-    image: "/usStory.png",
-    description:
-      "Developed a feature-rich storytelling platform allowing users to create customizable story pageswith image uploads, music selection, relationship tagging, public/private visibility. IntegratedCloudinary for media handling, implemented secure session-based authentication, built animatedUI using React + GSAP. Backend with Express & MongoDB and deployed for production. ",
-    tech: ["React", "NodeJs", "ExpressJs", "MongoDB", "GSAP", "Cloudinary"],
-    live: "https://us-story.vercel.app/",
-    github: "https://github.com/LISTEDMILE/UsStory.git",
-  },
-  {
     name: "OptiRoll",
     image: "/optiRoll.png",
     description:
@@ -35,6 +17,35 @@ export const projects = [
     ],
     live: "https://opti-roll.vercel.app/",
     github: "https://github.com/LISTEDMILE/OptiRoll.git",
+  },
+  {
+    name: "SpendLens",
+    image: "/spendLens.png",
+    description:
+      "SpendLens is a full-stack subscription and expense management platform that helps users organize recurring payments, track expenses, and receive timely renewal reminders. It features secure authentication with Google & GitHub OAuth, OTP-based email verification, and session management using NextAuth. The application includes an interactive analytics dashboard, subscription management, profile customization, and automated email reminders powered by Resend. SpendLens focuses on security, performance, and a seamless user experience across all devices.",
+    tech: [
+      "Next.js",  "TypeScript", "MongoDB", "Cloudinary", "Tailwind CSS", "Shadcn UI", "Zod", "React Hook Form", "NextAuth", "Resend"
+    ],
+    live: "https://spend-lens-pro.vercel.app/",
+    github: "https://github.com/LISTEDMILE/SpendLens.git",
+  },
+  {
+    name: "HireSphere",
+    image: "/hireSphere.png",
+    description:
+      "Built a full-stack recruitment platform with job posting, candidate application, shortlisting, hiring, and talent-pool features; boosted processing speed and recruiter–applicant engagement. ",
+    tech: ["React", "NodeJs", "ExpressJs", "MongoDB", "GSAP", "Cloudinary"],
+    live: "https://hire-sphere-sy.vercel.app/",
+    github: "https://github.com/LISTEDMILE/HireSphere.git",
+  },
+  {
+    name: "UsStory",
+    image: "/usStory.png",
+    description:
+      "Developed a feature-rich storytelling platform allowing users to create customizable story pageswith image uploads, music selection, relationship tagging, public/private visibility. IntegratedCloudinary for media handling, implemented secure session-based authentication, built animatedUI using React + GSAP. Backend with Express & MongoDB and deployed for production. ",
+    tech: ["React", "NodeJs", "ExpressJs", "MongoDB", "GSAP", "Cloudinary"],
+    live: "https://us-story.vercel.app/",
+    github: "https://github.com/LISTEDMILE/UsStory.git",
   },
   {
     name: "B365Advisors",

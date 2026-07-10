@@ -322,9 +322,9 @@ export default function FuturisticPortfolio() {
             {skills.map((category, index) => (
               <div
                 key={index}
-                className="skill-category group relative overflow-hidden rounded-[32px] border border-white/10 bg-[#011815] p-8 transform-gpu will-change-transform transition-transform transition-colors duration-300 hover:-translate-y-1 hover:border-cyan-400/50 active:-translate-y-1 active:border-cyan-400/50"
+                className="skill-category group relative overflow-hidden rounded-[32px] border border-white/10 bg-[#011815] bg-zinc-900 p-8 transform-gpu will-change-transform transition-transform transition-colors duration-300 hover:-translate-y-1 hover:border-cyan-400/50 active:-translate-y-1 active:border-cyan-400/50"
               >
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(34,211,238,.10),transparent_85%)] opacity-100 duration-500 group-hover:opacity-0 group-active:opacity-0" />
+                {/* <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(34,211,238,.10),transparent_85%)] opacity-100 duration-500 group-hover:opacity-0 group-active:opacity-0" /> */}
 
                 <div className="relative z-10">
                   <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
