@@ -26,6 +26,7 @@ import {
     SiResend,
     SiShadcnui,
     SiZod,
+    SiTypescript,
 } from "react-icons/si";
 import { VscAzure } from "react-icons/vsc";
 import { RiShieldCheckLine } from "react-icons/ri";
@@ -63,11 +64,6 @@ export const skills = [
             },
 
             { name: "shadcn/ui", icon: SiShadcnui, className: "text-white" },
-            {
-                name: "JavaScript (ES6+)",
-                icon: SiJavascript,
-                className: "text-yellow-400",
-            },
             { name: "HTML5", icon: SiHtml5, className: "text-orange-500" },
             { name: "CSS3", icon: SiCss3, className: "text-blue-500" },
         ],
@@ -107,6 +103,11 @@ export const skills = [
                 name: "JavaScript",
                 icon: SiJavascript,
                 className: "text-yellow-400",
+            },
+            {
+                name: "TypeScript",
+                icon: SiTypescript,
+                className: "text-blue-400",
             },
             { name: "Python", icon: SiPython, className: "text-[#3776AB]" },
             { name: "C++", icon: SiCplusplus, className: "text-[#00599C]" },

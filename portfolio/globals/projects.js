@@ -1,5 +1,29 @@
 export const projects = [
   {
+    name: "RespiraDx",
+    image: "/respiraDx.png",
+    description:
+      "RespiraDx is a modern AI-powered respiratory healthcare platform designed to simplify lung CT screening and patient–doctor collaboration. It provides AI-generated screening reports, health trends, screening analytics, appointment management, and dedicated dashboards for patients and doctors.",
+    tech: [
+      "TypeScript",
+      "NextJs",
+      "Tailwind",
+      "MongoDB",
+      "GSAP",
+      "Cloudinary",
+      "ShadcnUI",
+      "Python",
+      "Resend",
+      "Lung CT Classification Model",
+      "Hugging Face",
+      "Zod",
+      "NextAuth",
+      "Vercel"
+    ],
+    live: "https://respiradx.vercel.app/",
+    github: "https://github.com/LISTEDMILE/RespiraDx.git",
+  },
+  {
     name: "OptiRoll",
     image: "/optiRoll.png",
     description:
